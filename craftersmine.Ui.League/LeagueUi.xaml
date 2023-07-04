@@ -294,7 +294,7 @@
                 <ControlTemplate TargetType="Button">
                     <Border x:Name="ButtonBorder" BorderBrush="{StaticResource LeagueButtonBorderDefault}" BorderThickness="2">
                         <Border x:Name="ButtonBorderInner" BorderBrush="#040d15" Background="{StaticResource LeagueButtonBackgroundDefault}" BorderThickness="1">
-                            <ContentControl x:Name="ButtonContent" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <ContentControl x:Name="ButtonContent" Content="{TemplateBinding Content}" FontFamily="{StaticResource BeaufortForLOL}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
