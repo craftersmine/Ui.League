@@ -235,6 +235,13 @@
     <SolidColorBrush x:Key="LeagueTabItemTextDisabled" Color="#4d4a44"/>
     <!--#endregion-->
 
+    <!--#region ScrollBars Brushes-->
+    <SolidColorBrush x:Key="LeagueScrollBarDefault" Color="#785a28"/>
+    <SolidColorBrush x:Key="LeagueScrollBarMouseOver" Color="#c8aa6e"/>
+    <SolidColorBrush x:Key="LeagueScrollBarPressed" Color="#463714"/>
+    <SolidColorBrush x:Key="LeagueScrollBarDisabled" Color="#3c3c3d"/>
+    <!--#endregion-->
+
     <Style TargetType="Window" x:Key="LeagueWindowStyle">
         <Style.Setters>
             <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
@@ -337,14 +344,14 @@
         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
         <Setter Property="FontSize" Value="11pt"/>
     </Style>
-    
+
     <Style TargetType="{x:Type TextBlock}" x:Key="LeagueDefaultText">
         <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
         <Setter Property="FontSize" Value="11pt"/>
     </Style>
-        
+
     <Style TargetType="Label">
         <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
         <Setter Property="FontWeight" Value="Bold"/>
@@ -523,7 +530,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
                     <Border x:Name="TextBoxBorder" BorderBrush="{StaticResource LeagueTextBoxBorderDefault}" BorderThickness="1" SnapsToDevicePixels="True">
-                        <Border x:Name="TextBoxBorderInner" SnapsToDevicePixels="True" Padding="4" BorderBrush="{StaticResource LeagueTextBoxBorderInnerDefault}">
+                        <Border x:Name="TextBoxBorderInner" SnapsToDevicePixels="True" Padding="4 8" BorderBrush="{StaticResource LeagueTextBoxBorderInnerDefault}">
                             <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                         </Border>
                     </Border>
@@ -811,5 +818,163 @@
             </Setter.Value>
         </Setter>
     </Style>
-        
+
+    <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+        <Setter Property="Visibility" Value="Visible" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border
+                        CornerRadius="3"
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="0"
+                        Width="5" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ScrollBarThumbHor" TargetType="{x:Type Thumb}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border
+                        CornerRadius="3"
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="0"
+                        Height="6" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
+        <Track
+            Name="PART_Track"
+            IsDirectionReversed="true">
+            <Track.DecreaseRepeatButton>
+                <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageUpCommand" />
+            </Track.DecreaseRepeatButton>
+            <Track.Thumb>
+                <Thumb
+                    x:Name="ScrollBarThumb"
+                    Style="{StaticResource ScrollBarThumb}"
+                    Margin="1,0,1,0"
+                    Background="{StaticResource LeagueScrollBarDefault}" />
+            </Track.Thumb>
+            <Track.IncreaseRepeatButton>
+                <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageDownCommand" />
+            </Track.IncreaseRepeatButton>
+        </Track>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="ScrollBarThumb" Property="Background" Value="{StaticResource LeagueScrollBarMouseOver}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="ScrollBarThumb" Property="Background" Value="{StaticResource LeagueScrollBarDisabled}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="HorizontalScrollBar" TargetType="{x:Type ScrollBar}">
+        <Track
+            Name="PART_Track"
+            IsDirectionReversed="False">
+            <Track.DecreaseRepeatButton>
+                <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageLeftCommand" />
+            </Track.DecreaseRepeatButton>
+            <Track.Thumb>
+                <Thumb
+                    x:Name="ScrollBarThumb"
+                    Style="{StaticResource ScrollBarThumbHor}"
+                    Margin="0,1,0,1"
+                    Background="{StaticResource LeagueScrollBarDefault}" />
+            </Track.Thumb>
+            <Track.IncreaseRepeatButton>
+                <RepeatButton Style="{StaticResource ScrollBarPageButton}" Command="ScrollBar.PageRightCommand" />
+            </Track.IncreaseRepeatButton>
+        </Track>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="ScrollBarThumb" Property="Background" Value="{StaticResource LeagueScrollBarMouseOver}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="ScrollBarThumb" Property="Background" Value="{StaticResource LeagueScrollBarDisabled}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="Width" Value="Auto" />
+                <Setter Property="Height" Value="10" />
+                <Setter Property="Template" Value="{StaticResource HorizontalScrollBar}" />
+            </Trigger>
+            <Trigger Property="Orientation" Value="Vertical">
+                <Setter Property="Width" Value="16" />
+                <Setter Property="Height" Value="Auto" />
+                <Setter Property="Template" Value="{StaticResource VerticalScrollBar}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="{x:Type ScrollViewer}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ScrollContentPresenter Grid.Column="0" />
+                        <ScrollBar
+                            x:Name="PART_VerticalScrollBar"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="0 4 0 4"
+                            Value="{TemplateBinding VerticalOffset}"
+                            Maximum="{TemplateBinding ScrollableHeight}"
+                            ViewportSize="{TemplateBinding ViewportHeight}"
+                            Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" />
+                        <ScrollBar
+                            x:Name="PART_HorizontalScrollBar"
+                            Orientation="Horizontal"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="4 0 4 0"
+                            Value="{TemplateBinding HorizontalOffset}"
+                            Maximum="{TemplateBinding ScrollableWidth}"
+                            ViewportSize="{TemplateBinding ViewportWidth}"
+                            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 </ResourceDictionary>
