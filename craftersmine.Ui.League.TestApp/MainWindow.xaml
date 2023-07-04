@@ -6,16 +6,84 @@
         xmlns:local="clr-namespace:craftersmine.Ui.League"
         mc:Ignorable="d"
         Title="TestWindow" Height="450" Width="800" Style="{StaticResource LeagueWindowStyle}">
-    <Grid>
-        <Button HorizontalAlignment="Left" Margin="185,69,0,0" VerticalAlignment="Top" Height="36" Width="108">
-            DONE
-        </Button>
-        <Button Style="{DynamicResource LeagueButtonThinBorder}" HorizontalAlignment="Left" Margin="185,120,0,0" VerticalAlignment="Top" Height="36" Width="108">
-            DONE
-        </Button>
-        <Label Content="Label" HorizontalAlignment="Left" Height="76" Margin="354,105,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="21" Margin="24,21,0,0" VerticalAlignment="Top" Width="215"/>
-        <RadioButton Content="CheckBox" HorizontalAlignment="Left" Height="21" Margin="24,48,0,0" VerticalAlignment="Top" Width="215"/>
-        
-    </Grid>
+    <WrapPanel>
+        <GroupBox Header="Buttons" Margin="10" Width="240">
+            <StackPanel Orientation="Vertical">
+                <Button Content="Default" Margin="5" Height="32"/>
+                <Button Content="Disabled" Margin="5" Height="32" IsEnabled="False"/>
+                <Button Style="{DynamicResource LeagueButtonThickBorder}" Content="Thick Default" Margin="5" Height="32"/>
+                <Button Style="{DynamicResource LeagueButtonThickBorder}" Content="Thick Disabled" Margin="5" Height="32" IsEnabled="False"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="CheckBox" Margin="10" Width="240">
+            <StackPanel Orientation="Vertical">
+                <CheckBox Content="Default"/>
+                <CheckBox Content="Disabled" IsEnabled="False"/>
+                <CheckBox Content="Checked" IsChecked="True"/>
+                <CheckBox Content="Checked Disabled" IsEnabled="False" IsChecked="True"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="RadioButton" Width="240" Margin="10">
+            <StackPanel>
+                <Grid>
+                    <RadioButton Content="Default"/>
+                </Grid>
+                <Grid>
+                    <RadioButton Content="Default Disabled" IsEnabled="False"/>
+                </Grid>
+                <Grid>
+                    <RadioButton Content="Checked" IsChecked="True"/>
+                </Grid>
+                <Grid>
+                    <RadioButton Content="Checked Disabled" IsChecked="True" IsEnabled="False"/>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="TextBox" Width="240" Margin="10">
+            <StackPanel>
+                <TextBox Text="TextBox Default" Margin="1"/>
+                <TextBox IsReadOnly="True" Text="TextBox ReadOnly" Margin="1"/>
+                <TextBox IsEnabled="False" Text="TextBox Disabled" Margin="1"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="ComboBox" Margin="10" Width="240">
+            <StackPanel>
+                <ComboBox IsEditable="False" Margin="1">
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                </ComboBox>
+                <ComboBox IsEnabled="False" Margin="1" SelectedIndex="0">
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                    <ComboBoxItem Content="Test"/>
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Slider" Margin="10" Width="240">
+            <StackPanel>
+                <Slider Minimum="0" Maximum="10" SmallChange="1" Value="5"/>
+                <Slider Minimum="0" Maximum="10" SmallChange="1" Value="5" IsEnabled="False"/>
+            </StackPanel>
+        </GroupBox>
+    </WrapPanel>
 </Window>

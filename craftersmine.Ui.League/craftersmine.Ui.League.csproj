@@ -52,4 +52,8 @@
     <Resource Include="Fonts\Spiegel\spiegel-semibolditalic.otf" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
+
 </Project>

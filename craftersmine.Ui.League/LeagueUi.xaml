@@ -1,0 +1,761 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+
+    <FontFamily x:Key="BeaufortForLOL">/craftersmine.Ui.League;component/Fonts/Beaufort/#Beaufort for LoL</FontFamily>
+    <FontFamily x:Key="PTSans">/craftersmine.Ui.League;component/Fonts/PTSans/#PT Sans</FontFamily>
+    <FontFamily x:Key="SpiegelRegular">/craftersmine.Ui.League;component/Fonts/Spiegel/#Spiegel Regular</FontFamily>
+    <FontFamily x:Key="SpiegelSemiBold">/craftersmine.Ui.League;component/Fonts/Spiegel/#Spiegel SemiBold</FontFamily>
+
+    <!--#region Button Brushes-->
+    <LinearGradientBrush x:Key="LeagueButtonBorderDefault" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#c8aa6d" Offset="0"/>
+            <GradientStop Color="#795c28" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueButtonBorderMouseOver" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#f0e5d6" Offset="0"/>
+            <GradientStop Color="#c99f45" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueButtonBorderPressed" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#c8a96c" Offset="0"/>
+            <GradientStop Color="#7a5d29" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueButtonBorderDisabled" Color="#5c5b57"/>
+    <SolidColorBrush x:Key="LeagueButtonBackgroundDefault" Color="#1e2328"/>
+    <LinearGradientBrush x:Key="LeagueButtonBackgroundMouseOver" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#282c32" Offset="0"/>
+            <GradientStop Color="#4c4634" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueButtonTextColorDefault" Color="#cbbc8f"/>
+    <SolidColorBrush x:Key="LeagueButtonTextColorMouseOver" Color="#eee4d0"/>
+    <SolidColorBrush x:Key="LeagueButtonTextColorPressed" Color="#5c5b57"/>
+    <SolidColorBrush x:Key="LeagueButtonTextColorDisabled" Color="#5c5b57"/>
+    <!--#endregion-->
+
+    <SolidColorBrush x:Key="LeagueWindowBackground" Color="#010a13"/>
+
+    <!--#region Text Brushes-->
+    <SolidColorBrush x:Key="LeagueTextColorDefault" Color="#938f82"/>
+    <SolidColorBrush x:Key="LeagueTextColorMouseOver" Color="#ede3cf"/>
+    <SolidColorBrush x:Key="LeagueTextColorPressed" Color="#785a28"/>
+    <SolidColorBrush x:Key="LeagueTextColorDisabled" Color="#4d4a44"/>
+    <!--#endregion-->
+
+    <!--#region CheckBox Brushes-->
+    <SolidColorBrush x:Key="LeagueCheckBoxBackgroundDefault" Color="#010a13"/>
+    <SolidColorBrush x:Key="LeagueCheckBoxBorderDefault" Color="#785a28"/>
+    <SolidColorBrush x:Key="LeagueCheckBoxTickDefault" Color="#c89b3c"/>
+    <LinearGradientBrush x:Key="LeagueCheckBoxBorderMouseOver" StartPoint="0,0" EndPoint="1,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#785a28" Offset="0"/>
+            <GradientStop Color="#a08248" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueCheckBoxBackgroundMouseOver" StartPoint="0,0" EndPoint="1,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#020b13" Offset="0"/>
+            <GradientStop Color="#111a20" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueCheckBoxTickMouseOver" Color="#f0e6d2"/>
+    <SolidColorBrush x:Key="LeagueCheckBoxBackgroundDisabled" Color="#00070d"/>
+    <SolidColorBrush x:Key="LeagueCheckBoxBorderDisabled" Color="#3c2d14"/>
+    <SolidColorBrush x:Key="LeagueCheckBoxTickDisabled" Color="#644d1e"/>
+    <!--#endregion-->
+
+    <!--#region RadioButton Brushes-->
+    <LinearGradientBrush x:Key="LeagueRadioButtonBorderDefault" StartPoint="0,0" EndPoint="1,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#b18832" Offset="0"/>
+            <GradientStop Color="#806229" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueRadioButtonBackgroundDefault" Color="#010a13"/>
+    <SolidColorBrush x:Key="LeagueRadioButtonInnerDefault" Color="#efe6d2"/>
+    <LinearGradientBrush x:Key="LeagueRadioButtonBorderMouseOver" StartPoint="0,0" EndPoint="1,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#e8dbc2" Offset="0"/>
+            <GradientStop Color="#c69c43" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueRadioButtonBackgroundMouseOver" Color="#010a13"/>
+    <SolidColorBrush x:Key="LeagueRadioButtonInnerMouseOver" Color="#efe6d2"/>
+    <LinearGradientBrush x:Key="LeagueRadioButtonBorderPressed" StartPoint="0,0" EndPoint="1,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#433515" Offset="0"/>
+            <GradientStop Color="#604922" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueRadioButtonBackgroundPressed" Color="#010a13"/>
+    <SolidColorBrush x:Key="LeagueRadioButtonInnerPressed" Color="#59441d"/>
+    <SolidColorBrush x:Key="LeagueRadioButtonBorderDisabled" Color="#3c3732"/>
+    <SolidColorBrush x:Key="LeagueRadioButtonBackgroundDisabled" Color="#000305"/>
+    <SolidColorBrush x:Key="LeagueRadioButtonInnerDisabled" Color="#3c3732"/>
+    <!--#endregion-->
+
+    <!--#region GroupBox Brushes-->
+    <SolidColorBrush x:Key="LeagueGroupBoxBorder" Color="#1e282d"/>
+    <!--#endregion-->
+
+    <!--#region TextBox Brushes-->
+    <SolidColorBrush x:Key="LeagueTextBoxBorderDefault" Color="#785a28"/>
+    <SolidColorBrush x:Key="LeagueTextBoxBorderInnerDefault" Color="#000204"/>
+    <SolidColorBrush x:Key="LeagueTextBoxBackgroundDefault" Color="#000306"/>
+    <LinearGradientBrush x:Key="LeagueTextBoxBorderMouseOver" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#7a5c2a" Offset="0"/>
+            <GradientStop Color="#c7a96d" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueTextBoxBackgroundMouseOver" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#060f19" Offset="0"/>
+            <GradientStop Color="#161e25" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueTextBoxBorderReadOnly" Color="#414443"/>
+    <!--#endregion-->
+
+    <!--#region ComboBox Brushes-->
+    <LinearGradientBrush x:Key="LeagueComboBoxBorderDefault" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#c4a461" Offset="0"/>
+            <GradientStop Color="#6e5a26" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueComboBoxBackgroundDefault" Color="#0f171d"/>
+    <SolidColorBrush x:Key="LeagueComboBoxArrowsDefault" Color="#c8aa6e"/>
+    <LinearGradientBrush x:Key="LeagueComboBoxBorderMouseOver" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#f0e5d0" Offset="0"/>
+            <GradientStop Color="#c99d3f" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueComboBoxBackgroundMouseOver" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#0f171d" Offset="0"/>
+            <GradientStop Color="#2c2e2a" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueComboBoxArrowsMouseOver" Color="#c8aa6e"/>
+    <SolidColorBrush x:Key="LeagueComboBoxBorderPressed" Color="#463714"/>
+    <SolidColorBrush x:Key="LeagueComboBoxBackgroundPressed" Color="#0f171d"/>
+    <SolidColorBrush x:Key="LeagueComboBoxArrowsPressed" Color="#785a28"/>
+    <SolidColorBrush x:Key="LeagueComboBoxBorderDisabled" Color="#3c3c3d"/>
+    <SolidColorBrush x:Key="LeagueComboBoxBackgroundDisabled" Color="#212223"/>
+    <SolidColorBrush x:Key="LeagueComboBoxArrowsDisabled" Color="#3c3c3d"/>
+
+    <SolidColorBrush x:Key="LeagueComboBoxPopupBackground" Color="#010a13"/>
+    <!--#endregion-->
+
+    <!--#region ComboBoxItem Brushes-->
+    <SolidColorBrush x:Key="LeagueComboBoxItemBorder" Color="#1f2123"/>
+    <SolidColorBrush x:Key="LeagueComboBoxItemBackgroundMouseOver" Color="#1e2328"/>
+    <SolidColorBrush x:Key="LeagueComboBoxItemBackgroundPressed" Color="#0f171d"/>
+    <SolidColorBrush x:Key="LeagueComboBoxItemForegroundDefault" Color="#bfb288"/>
+    <SolidColorBrush x:Key="LeagueComboBoxItemForegroundMouseOver" Color="#e6ddca"/>
+    <SolidColorBrush x:Key="LeagueComboBoxItemForegroundPressed" Color="#3b3116"/>
+    <!--#endregion-->
+
+    <!--#region Slider Brushes-->
+    <LinearGradientBrush x:Key="LeagueSliderTrackForegroundDefault" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#473814" Offset="0"/>
+            <GradientStop Color="#695625" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueSliderTrackBackgroundDefault" Color="#1e2328"/>
+    <LinearGradientBrush x:Key="LeagueSliderHandleForegroundDefault" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#b38d41" Offset="0"/>
+            <GradientStop Color="#6e5328" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueSliderHandleBackgroundDefault" Color="#1b2026"/>
+    <LinearGradientBrush x:Key="LeagueSliderTrackForegroundMouseOver" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#795b29" Offset="0"/>
+            <GradientStop Color="#c8aa6e" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueSliderHandleForegroundMouseOver" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#eee2cc" Offset="0"/>
+            <GradientStop Color="#c99e42" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueSliderHandleBackgroundMouseOver" Color="#2a2d2d"/>
+    <LinearGradientBrush x:Key="LeagueSliderTrackForegroundPressed" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#795b29" Offset="0"/>
+            <GradientStop Color="#c8aa6e" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueSliderHandleForegroundPressed" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#473814" Offset="0"/>
+            <GradientStop Color="#694f23" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueSliderHandleBackgroundPressed" Color="#2a2d2d"/>
+    <LinearGradientBrush x:Key="LeagueSliderTrackForegroundDisabled" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#1a1f25" Offset="0"/>
+            <GradientStop Color="#1a1f25" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueSliderHandleForegroundDisabled" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#5c5b57" Offset="0"/>
+            <GradientStop Color="#5c5b57" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueSliderHandleBackgroundDisabled" Color="#1c2227"/>
+    <!--#endregion-->
+
+    <Style TargetType="Window" x:Key="LeagueWindowStyle">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
+            <Setter Property="Background" Value="{StaticResource LeagueWindowBackground}"/>
+            <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="Control">
+        <Style.Setters>
+            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
+            <Setter Property="Background" Value="{StaticResource LeagueWindowBackground}"/>
+            <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="ButtonBorder" BorderBrush="{StaticResource LeagueButtonBorderDefault}" BorderThickness="1">
+                        <Border x:Name="ButtonBorderInner" BorderBrush="#040d15" Background="{StaticResource LeagueButtonBackgroundDefault}" BorderThickness="1">
+                            <ContentControl x:Name="ButtonContent" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueButtonBorderMouseOver}"/>
+                            <Setter TargetName="ButtonBorderInner" Property="BorderBrush" Value="{StaticResource LeagueButtonBackgroundMouseOver}"/>
+                            <Setter TargetName="ButtonBorderInner" Property="Background" Value="{StaticResource LeagueButtonBackgroundMouseOver}"/>
+                            <Setter Property="Foreground" Value="{StaticResource LeagueButtonTextColorMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="#463817"/>
+                            <Setter TargetName="ButtonBorderInner" Property="BorderBrush" Value="#040d15"/>
+                            <Setter TargetName="ButtonBorderInner" Property="Background" Value="{StaticResource LeagueButtonBackgroundDefault}"/>
+                            <Setter Property="Foreground" Value="{StaticResource LeagueButtonTextColorPressed}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueButtonBorderDisabled}"/>
+                            <Setter Property="Foreground" Value="{StaticResource LeagueButtonTextColorDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Foreground" Value="{StaticResource LeagueButtonTextColorDefault}"/>
+        <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="FontSize" Value="8pt"/>
+    </Style>
+
+    <Style x:Key="LeagueButtonThickBorder" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="ButtonBorder" BorderBrush="{StaticResource LeagueButtonBorderDefault}" BorderThickness="2">
+                        <Border x:Name="ButtonBorderInner" BorderBrush="#040d15" Background="{StaticResource LeagueButtonBackgroundDefault}" BorderThickness="1">
+                            <ContentControl x:Name="ButtonContent" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueButtonBorderMouseOver}"/>
+                            <Setter TargetName="ButtonBorderInner" Property="BorderBrush" Value="{StaticResource LeagueButtonBackgroundMouseOver}"/>
+                            <Setter TargetName="ButtonBorderInner" Property="Background" Value="{StaticResource LeagueButtonBackgroundMouseOver}"/>
+                            <Setter Property="Foreground" Value="{StaticResource LeagueButtonTextColorMouseOver}"/>
+                            <Setter TargetName="ButtonBorder" Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="#eee4d0" ShadowDepth="0" Opacity="1" BlurRadius="10"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="#463817"/>
+                            <Setter TargetName="ButtonBorderInner" Property="BorderBrush" Value="#040d15"/>
+                            <Setter TargetName="ButtonBorderInner" Property="Background" Value="{StaticResource LeagueButtonBackgroundDefault}"/>
+                            <Setter Property="Foreground" Value="{StaticResource LeagueButtonTextColorPressed}"/>
+                            <Setter TargetName="ButtonBorder" Property="Effect" Value="{x:Null}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueButtonBorderDisabled}"/>
+                            <Setter Property="Foreground" Value="{StaticResource LeagueButtonTextColorDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Foreground" Value="{StaticResource LeagueButtonTextColorDefault}"/>
+        <Setter Property="FontFamily" Value="{StaticResource BeaufortForLOL}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="11pt"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="LeagueAccentText">
+        <Setter Property="FontFamily" Value="{StaticResource BeaufortForLOL}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
+        <Setter Property="FontSize" Value="11pt"/>
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
+        <Setter Property="FontSize" Value="8pt"/>
+    </Style>
+
+    <Style TargetType="CheckBox">
+        <Style.Setters>
+            <Setter Property="FontFamily" Value="{StaticResource SpiegelSemiBold}"/>
+            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="22"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <BulletDecorator HorizontalAlignment="Left" Margin="2" Grid.Column="0">
+                                <Border x:Name="CheckBoxBorder"
+                                        VerticalAlignment="Center"
+                                        Width="12"
+                                        Height="12"
+                                        Background="{StaticResource LeagueCheckBoxBackgroundDefault}"
+                                        BorderThickness="1"
+                                        CornerRadius="0"
+                                        BorderBrush="{StaticResource LeagueCheckBoxBorderDefault}">
+                                    <Path x:Name="CheckBoxTick"
+                                        Width="13"
+                                        Height="10"
+                                        Stroke="{StaticResource LeagueCheckBoxTickDefault}"
+                                        SnapsToDevicePixels="False"
+                                        StrokeThickness="1.3"
+                                        StrokeStartLineCap="Square"
+                                        StrokeEndLineCap="Square"
+                                        Data="M 3 5 L 5 7 M 5 7 L 12 0"/>
+                                </Border>
+                            </BulletDecorator>
+                            <ContentControl x:Name="CheckBoxContent"
+                                            Content="{TemplateBinding Content}"
+                                            Grid.Column="1"
+                                            Foreground="{StaticResource LeagueTextColorDefault}"
+                                            FontFamily="{StaticResource PTSans}"
+                                            FontStretch="Expanded"
+                                            FontWeight="SemiBold"
+                                            VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CheckBoxContent" Property="Foreground" Value="{StaticResource LeagueTextColorMouseOver}"/>
+                                <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{StaticResource LeagueCheckBoxBorderMouseOver}"/>
+                                <Setter TargetName="CheckBoxTick" Property="Stroke" Value="{StaticResource LeagueCheckBoxTickMouseOver}"/>
+                                <Setter TargetName="CheckBoxBorder" Property="Background" Value="{StaticResource LeagueCheckBoxBackgroundMouseOver}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter TargetName="CheckBoxTick" Property="Visibility" Value="Hidden"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="{x:Null}">
+                                <Setter TargetName="CheckBoxTick" Property="Visibility" Value="Hidden"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="CheckBoxContent" Property="Foreground" Value="{StaticResource LeagueTextColorDisabled}"/>
+                                <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{StaticResource LeagueCheckBoxBorderDisabled}"/>
+                                <Setter TargetName="CheckBoxTick" Property="Stroke" Value="{StaticResource LeagueCheckBoxTickDisabled}"/>
+                                <Setter TargetName="CheckBoxBorder" Property="Background" Value="{StaticResource LeagueCheckBoxBackgroundDisabled}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="RadioButton">
+        <Setter Property="FontFamily" Value="{StaticResource SpiegelSemiBold}"/>
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="22"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <BulletDecorator Margin="0"
+                                         VerticalAlignment="Center"
+                                         HorizontalAlignment="Center"
+                                         Width="12"
+                                         Height="12">
+                            <Border x:Name="RadioButtonBorder"
+                                    Padding="1"
+                                        Width="10"
+                                        Height="10"
+                                        Background="{StaticResource LeagueRadioButtonBackgroundDefault}"
+                                        BorderThickness="2"
+                                        CornerRadius="0"
+                                        BorderBrush="{StaticResource LeagueRadioButtonBorderDefault}"
+                                    RenderTransformOrigin="0.2,0">
+                                <Border.RenderTransform>
+                                    <RotateTransform Angle="45" CenterX="1" CenterY="1"/>
+                                </Border.RenderTransform>
+                                <Border x:Name="RadioButtonInner"
+                                        Background="{StaticResource LeagueRadioButtonInnerDefault}"/>
+                            </Border>
+                        </BulletDecorator>
+                        <ContentControl Grid.Column="1" x:Name="RadioButtonContent" Content="{TemplateBinding Content}" VerticalAlignment="Center"
+                                            Foreground="{StaticResource LeagueTextColorDefault}"
+                                            FontFamily="{StaticResource PTSans}"
+                                            FontStretch="Expanded"
+                                            FontWeight="SemiBold"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="RadioButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueRadioButtonBorderMouseOver}"/>
+                            <Setter TargetName="RadioButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="RadioButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueRadioButtonBorderPressed}"/>
+                            <Setter TargetName="RadioButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorMouseOver}"/>
+                            <Setter TargetName="RadioButtonInner" Property="Background" Value="{StaticResource LeagueRadioButtonInnerPressed}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="RadioButtonInner" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="RadioButtonInner" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="RadioButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueRadioButtonBorderDisabled}"/>
+                            <Setter TargetName="RadioButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorDisabled}"/>
+                            <Setter TargetName="RadioButtonInner" Property="Background" Value="{StaticResource LeagueRadioButtonInnerDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="GroupBox">
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <SolidColorBrush Color="#1e282d"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GroupBox">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <ContentControl Grid.Row="0" Content="{TemplateBinding Header}"/>
+                        <Border Grid.Row="1" BorderBrush="{StaticResource LeagueGroupBoxBorder}" BorderThickness="0 1 0 0" Margin="0 4 0 4"/>
+                        <ContentControl Grid.Row="2" Content="{TemplateBinding Content}" Padding="8"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="TextBox">
+        <Setter Property="BorderBrush" Value="{StaticResource LeagueTextBoxBorderDefault}"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="{StaticResource LeagueTextBoxBackgroundDefault}"/>
+        <Setter Property="CaretBrush" Value="{StaticResource LeagueTextColorDefault}"/>
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorMouseOver}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="TextBoxBorder" BorderBrush="{StaticResource LeagueTextBoxBorderDefault}" BorderThickness="1" SnapsToDevicePixels="True">
+                        <Border x:Name="TextBoxBorderInner" SnapsToDevicePixels="True" Padding="4" BorderBrush="{StaticResource LeagueTextBoxBorderInnerDefault}">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="TextBoxBorder" Property="BorderBrush" Value="{StaticResource LeagueTextBoxBorderMouseOver}"/>
+                            <Setter TargetName="TextBoxBorderInner" Property="Background" Value="{StaticResource LeagueTextBoxBackgroundMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDisabled}"/>
+                        </Trigger>
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter TargetName="TextBoxBorder" Property="BorderBrush" Value="{StaticResource LeagueTextBoxBorderReadOnly}"/>
+                            <Setter TargetName="TextBoxBorderInner" Property="Background" Value="{x:Null}"/>
+                            <Setter TargetName="TextBoxBorderInner" Property="BorderBrush" Value="{x:Null}"/>
+                            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="LeagueComboBoxToggleButton" TargetType="ToggleButton">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Border
+                x:Name="Border" 
+                Grid.ColumnSpan="2"
+                CornerRadius="0"
+                Background="{StaticResource LeagueComboBoxBackgroundDefault}"
+                BorderBrush="{StaticResource LeagueComboBoxBorderDefault}"
+                BorderThickness="1"/>
+            <Path 
+                Width="6"
+                Height="12"
+                x:Name="Arrow"
+                Grid.Column="1"     
+                Stroke="{StaticResource LeagueComboBoxArrowsDefault}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Data="M 0 3 L 2 1 M 2 1 L 4 3 M 0 8 L 2 10 M 2 10 L 4 8"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource LeagueComboBoxBorderMouseOver}"/>
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource LeagueComboBoxBackgroundMouseOver}"/>
+                <Setter TargetName="Arrow" Property="Stroke" Value="{StaticResource LeagueComboBoxArrowsMouseOver}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource LeagueComboBoxBorderPressed}"/>
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource LeagueComboBoxBackgroundPressed}"/>
+                <Setter TargetName="Arrow" Property="Stroke" Value="{StaticResource LeagueComboBoxArrowsPressed}"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource LeagueComboBoxBorderPressed}"/>
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource LeagueComboBoxBackgroundPressed}"/>
+                <Setter Property="Foreground" Value="{StaticResource LeagueTextColorPressed}"/>
+                <Setter TargetName="Arrow" Property="Stroke" Value="{StaticResource LeagueComboBoxArrowsPressed}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource LeagueComboBoxBackgroundDisabled}" />
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource LeagueComboBoxBorderDisabled}" />
+                <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDisabled}"/>
+                <Setter TargetName="Arrow" Property="Stroke" Value="{StaticResource LeagueComboBoxArrowsDisabled}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style TargetType="ComboBox">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+        <Setter Property="MinWidth" Value="120"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <ToggleButton 
+                            Name="ToggleButton" 
+                            Template="{StaticResource LeagueComboBoxToggleButton}" 
+                            Grid.Column="2" 
+                            Focusable="false"
+                            IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                            ClickMode="Press"/>
+                        <ContentControl
+                            Name="ContentSite"
+                            IsHitTestVisible="False" 
+                            Content="{TemplateBinding SelectionBoxItem}"
+                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                            Margin="8"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"/>
+                        <Popup 
+                            Name="Popup"
+                            Placement="Bottom"
+                            IsOpen="{TemplateBinding IsDropDownOpen}"
+                            AllowsTransparency="True" 
+                            Focusable="False"
+                            PopupAnimation="Slide">
+                            <Grid 
+                                Name="DropDown"
+                                SnapsToDevicePixels="True"                
+                                MinWidth="{TemplateBinding ActualWidth}"
+                                MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border 
+                                    x:Name="DropDownBorder"
+                                    Background="{StaticResource LeagueComboBoxPopupBackground}"
+                                    BorderThickness="1"
+                                    BorderBrush="{StaticResource LeagueComboBoxBorderDefault}"/>
+                                <ScrollViewer Margin="1" SnapsToDevicePixels="True">
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDropDownOpen" Value="True">
+                            <Setter TargetName="ContentSite" Property="Foreground" Value="{StaticResource LeagueTextColorPressed}"/>
+                        </Trigger>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDisabled}"/>
+                        </Trigger>
+                        <Trigger Property="IsGrouping" Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ComboBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <Border x:Name="ItemContainerBorder" Padding="8" SnapsToDevicePixels="True" BorderBrush="{StaticResource LeagueComboBoxItemBorder}" BorderThickness="0 1 0 0">
+                        <ContentControl x:Name="ItemContainerHost" Content="{TemplateBinding Content}" Foreground="{StaticResource LeagueComboBoxItemForegroundDefault}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ItemContainerBorder" Property="Background" Value="{StaticResource LeagueComboBoxItemBackgroundMouseOver}"/>
+                            <Setter TargetName="ItemContainerHost" Property="Foreground" Value="{StaticResource LeagueComboBoxItemForegroundMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="ItemContainerBorder" Property="Background" Value="{StaticResource LeagueComboBoxItemBackgroundMouseOver}"/>
+                            <Setter TargetName="ItemContainerHost" Property="Foreground" Value="{StaticResource LeagueComboBoxItemForegroundMouseOver}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SliderRepeatButton" TargetType="RepeatButton">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Border Background="Transparent"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SliderRepeatButton1" TargetType="RepeatButton">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Border x:Name="SliderForeground" Margin="0 0 3 0" SnapsToDevicePixels="True" Background="{StaticResource LeagueSliderTrackForegroundDefault}"  BorderThickness="1" BorderBrush="{StaticResource LeagueSliderTrackForegroundDefault}" Height="3"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource LeagueSliderTrackForegroundDefault}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource LeagueSliderTrackForegroundDefault}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SliderThumb" TargetType="Thumb">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <StackPanel Orientation="Vertical" Width="24" Height="24">
+                        <Path x:Name="SliderHandlePart1" Width="24" Height="24" Stroke="{StaticResource LeagueSliderHandleForegroundDefault}" Fill="{StaticResource LeagueSliderHandleBackgroundDefault}" StrokeThickness="2.5" SnapsToDevicePixels="True"
+                                  Data="M 11.5 2.5 21 12 11 22 1 12 L 11 2" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+                        <Path x:Name="SliderHandlePart2" Width="24" Height="24" Margin="0 -24 0 0" Stroke="{StaticResource LeagueSliderHandleForegroundDefault}" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeThickness="1.5"
+                                  Data="M 8 5 15 12 8 19 M 14 5 7 12 14 19"/>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="SliderHandlePart1" Property="Stroke" Value="{StaticResource LeagueSliderHandleForegroundMouseOver}"/>
+                            <Setter TargetName="SliderHandlePart2" Property="Stroke" Value="{StaticResource LeagueSliderHandleForegroundMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsDragging" Value="True">
+                            <Setter TargetName="SliderHandlePart1" Property="Stroke" Value="{StaticResource LeagueSliderHandleForegroundPressed}"/>
+                            <Setter TargetName="SliderHandlePart2" Property="Stroke" Value="{StaticResource LeagueSliderHandleForegroundPressed}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="SliderHandlePart1" Property="Stroke" Value="{StaticResource LeagueSliderHandleForegroundDisabled}"/>
+                            <Setter TargetName="SliderHandlePart2" Property="Stroke" Value="{StaticResource LeagueSliderHandleForegroundDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="Slider"  TargetType="Slider">
+        <Grid>
+            <Border x:Name="TrackBackground" VerticalAlignment="Center" Margin="0" BorderBrush="{StaticResource LeagueSliderTrackBackgroundDefault}" Background="{StaticResource LeagueSliderTrackBackgroundDefault}" Height="3" BorderThickness="1"/>
+            <Track Grid.Row="1" x:Name="PART_Track" Margin="0"  >
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource SliderRepeatButton1}"  Command="Slider.DecreaseLarge" />
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb Style="{StaticResource SliderThumb}" Margin="0" />
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource SliderRepeatButton}" Command="Slider.IncreaseLarge" />
+                </Track.IncreaseRepeatButton>
+            </Track>
+        </Grid>
+    </ControlTemplate>
+
+    <Style TargetType="Slider">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="MinHeight" Value="21" />
+                <Setter Property="MinWidth" Value="104" />
+                <Setter Property="Template" Value="{StaticResource Slider}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
