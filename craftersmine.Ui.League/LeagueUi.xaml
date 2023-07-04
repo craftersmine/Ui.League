@@ -331,13 +331,20 @@
         <Setter Property="FontSize" Value="11pt"/>
     </Style>
 
-    <Style TargetType="TextBlock" x:Key="LeagueAccentText">
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueAccentText">
         <Setter Property="FontFamily" Value="{StaticResource BeaufortForLOL}"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
         <Setter Property="FontSize" Value="11pt"/>
     </Style>
-
+    
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueDefaultText">
+        <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
+        <Setter Property="FontSize" Value="11pt"/>
+    </Style>
+        
     <Style TargetType="Label">
         <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
         <Setter Property="FontWeight" Value="Bold"/>
