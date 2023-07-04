@@ -222,6 +222,19 @@
     <SolidColorBrush x:Key="LeagueSliderHandleBackgroundDisabled" Color="#1c2227"/>
     <!--#endregion-->
 
+    <!--#region TabControl Brushes-->
+    <LinearGradientBrush x:Key="LeagueTabItemBorderDefault" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="Transparent" Offset="0"/>
+            <GradientStop Color="#c2b58b" Offset="0.5"/>
+            <GradientStop Color="Transparent" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueTabItemTextDefault" Color="#c6b78d"/>
+    <SolidColorBrush x:Key="LeagueTabItemTextSelected" Color="#e4dbc8"/>
+    <SolidColorBrush x:Key="LeagueTabItemTextDisabled" Color="#4d4a44"/>
+    <!--#endregion-->
+
     <Style TargetType="Window" x:Key="LeagueWindowStyle">
         <Style.Setters>
             <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
@@ -498,6 +511,7 @@
         <Setter Property="Background" Value="{StaticResource LeagueTextBoxBackgroundDefault}"/>
         <Setter Property="CaretBrush" Value="{StaticResource LeagueTextColorDefault}"/>
         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorMouseOver}"/>
+        <Setter Property="Cursor" Value="IBeam"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
@@ -679,7 +693,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style x:Key="SliderRepeatButton1" TargetType="RepeatButton">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
@@ -689,15 +702,14 @@
                     <Border x:Name="SliderForeground" Margin="0 0 3 0" SnapsToDevicePixels="True" Background="{StaticResource LeagueSliderTrackForegroundDefault}"  BorderThickness="1" BorderBrush="{StaticResource LeagueSliderTrackForegroundDefault}" Height="3"/>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{StaticResource LeagueSliderTrackForegroundDefault}"/>
-                            <Setter Property="BorderBrush" Value="{StaticResource LeagueSliderTrackForegroundDefault}"/>
+                            <Setter TargetName="SliderForeground" Property="Background" Value="{StaticResource LeagueSliderTrackForegroundDisabled}"/>
+                            <Setter TargetName="SliderForeground" Property="BorderBrush" Value="{StaticResource LeagueSliderTrackForegroundDisabled}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
     <Style x:Key="SliderThumb" TargetType="Thumb">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
@@ -728,8 +740,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <ControlTemplate x:Key="Slider"  TargetType="Slider">
+    <ControlTemplate x:Key="Slider" TargetType="Slider">
         <Grid>
             <Border x:Name="TrackBackground" VerticalAlignment="Center" Margin="0" BorderBrush="{StaticResource LeagueSliderTrackBackgroundDefault}" Background="{StaticResource LeagueSliderTrackBackgroundDefault}" Height="3" BorderThickness="1"/>
             <Track Grid.Row="1" x:Name="PART_Track" Margin="0"  >
@@ -744,8 +755,13 @@
                 </Track.IncreaseRepeatButton>
             </Track>
         </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="TrackBackground" Property="BorderBrush" Value="{StaticResource LeagueSliderTrackBackgroundDefault}"/>
+                <Setter TargetName="TrackBackground" Property="Background" Value="{StaticResource LeagueSliderTrackBackgroundDefault}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
-
     <Style TargetType="Slider">
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="SnapsToDevicePixels" Value="true" />
@@ -757,5 +773,35 @@
                 <Setter Property="Template" Value="{StaticResource Slider}" />
             </Trigger>
         </Style.Triggers>
+    </Style>
+
+    <Style TargetType="TabControl">
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+    </Style>
+
+    <Style TargetType="TabItem">
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border x:Name="TabBorder" BorderBrush="{StaticResource LeagueTabItemBorderDefault}" BorderThickness="0 0 0 1" Padding="10 5">
+                        <ContentControl x:Name="HeaderContentHost" Content="{TemplateBinding Header}" FontSize="11pt" FontWeight="Bold" FontFamily="{StaticResource BeaufortForLOL}" Foreground="{StaticResource LeagueTabItemTextSelected}" Height="16" MinWidth="24" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="TabBorder" Property="BorderBrush" Value="Transparent"/>
+                            <Setter TargetName="HeaderContentHost" Property="Foreground" Value="{StaticResource LeagueTabItemTextDefault}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="HeaderContentHost" Property="Foreground" Value="{StaticResource LeagueTabItemTextSelected}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="HeaderContentHost" Property="Foreground" Value="{StaticResource LeagueTabItemTextDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

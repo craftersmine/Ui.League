@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:craftersmine.Ui.League"
         mc:Ignorable="d"
         Title="TestWindow" Height="450" Width="800" Style="{StaticResource LeagueWindowStyle}">
-    <WrapPanel>
+    <ScrollViewer>
+        <WrapPanel> 
         <GroupBox Header="Buttons" Margin="10" Width="240">
             <StackPanel Orientation="Vertical">
                 <Button Content="Default" Margin="5" Height="32"/>
@@ -81,9 +82,19 @@
         </GroupBox>
         <GroupBox Header="Slider" Margin="10" Width="240">
             <StackPanel>
-                <Slider Minimum="0" Maximum="10" SmallChange="1" Value="5"/>
+                <TextBlock Text="{Binding ElementName=Slider, Path=Value}"/>
+                <Slider x:Name="Slider" Minimum="0" Maximum="10" SmallChange="1" Value="5"/>
                 <Slider Minimum="0" Maximum="10" SmallChange="1" Value="5" IsEnabled="False"/>
             </StackPanel>
         </GroupBox>
+        <GroupBox Header="TabView" Margin="10" Width="240">
+            <TabControl Height="200">
+                <TabItem Header="Tab 1"/>
+                <TabItem Header="Tab 2"/>
+                <TabItem Header="Tab 3"/>
+                <TabItem Header="Tab Disabled" IsEnabled="False"/>
+            </TabControl>
+        </GroupBox>
     </WrapPanel>
+    </ScrollViewer>
 </Window>
