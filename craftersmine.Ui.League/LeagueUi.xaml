@@ -785,8 +785,8 @@
     <Style TargetType="TabControl">
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="Padding" Value="8 40 8 8"/>
     </Style>
-
     <Style TargetType="TabItem">
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="Template">
@@ -811,4 +811,5 @@
             </Setter.Value>
         </Setter>
     </Style>
+        
 </ResourceDictionary>
