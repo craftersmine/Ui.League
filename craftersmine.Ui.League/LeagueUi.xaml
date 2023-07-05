@@ -539,7 +539,25 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    <Style TargetType="GroupBox" x:Key="LeagueGroupBoxAccentStyle" BasedOn="{StaticResource {x:Type GroupBox}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GroupBox">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <ContentControl Grid.Row="0" Content="{TemplateBinding Header}" FontFamily="{StaticResource BeaufortForLOL}" FontWeight="Bold" FontSize="10pt"/>
+                        <Border Grid.Row="1" BorderBrush="{StaticResource LeagueGroupBoxBorderAccent}" BorderThickness="0 1 0 0" Margin="0 4 0 4"/>
+                        <ContentControl Grid.Row="2" Content="{TemplateBinding Content}" Padding="8"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style TargetType="TextBox">
         <Setter Property="BorderBrush" Value="{StaticResource LeagueTextBoxBorderDefault}"/>
         <Setter Property="Padding" Value="4"/>
