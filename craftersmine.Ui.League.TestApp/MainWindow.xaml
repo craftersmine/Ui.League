@@ -253,6 +253,19 @@
                     <TextBlock Text="SubHeader" Style="{StaticResource LeagueSubHeaderText}" Margin="10"/>
                 </StackPanel>
             </GroupBox>
+            <GroupBox Header="ScrollViewer" Margin="10" Width="240">
+                <StackPanel>
+                    <ScrollViewer Width="200" Height="100" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+
+                        <StackPanel>
+                            <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                       Style="{StaticResource LeagueDefaultText}" Margin="10" TextWrapping="Wrap"
+                                       Width="300" Height="300"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <ScrollViewer Width="200" Height="100" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" IsEnabled="False"/>
+                </StackPanel>
+            </GroupBox>
         </WrapPanel>
     </ScrollViewer>
 </Window>
