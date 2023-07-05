@@ -56,4 +56,10 @@
     <Folder Include="Styles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Controls\UserPicture.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

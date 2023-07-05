@@ -1,0 +1,74 @@
+﻿<Button x:Class="craftersmine.Ui.League.Controls.UserPictureButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:craftersmine.Ui.League.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="32" d:DesignWidth="32" MinHeight="32" MinWidth="32" MaxHeight="32" MaxWidth="32">
+    <Button.Resources>
+        <ResourceDictionary>
+            <RadialGradientBrush x:Key="LeagueUserPictureImageOpacityMask" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                <RadialGradientBrush.GradientStops>
+                    <GradientStop Color="#000" Offset="0"/>
+                    <GradientStop Color="#000" Offset="0.9999"/>
+                    <GradientStop Color="Transparent" Offset="1"/>
+                </RadialGradientBrush.GradientStops>
+            </RadialGradientBrush>
+            
+            <RadialGradientBrush x:Key="LeagueUserPictureImageVignette" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                <RadialGradientBrush.GradientStops>
+                    <GradientStop Color="Transparent" Offset="0"/>
+                    <GradientStop Color="#33000000" Offset="1"/>
+                </RadialGradientBrush.GradientStops>
+            </RadialGradientBrush>
+
+            <LinearGradientBrush x:Key="LeagueUserPictureImageBorderDefault" StartPoint="0,0" EndPoint="0,1">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#b99c5f" Offset="0"/>
+                    <GradientStop Color="#664d27" Offset="1"/>
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="LeagueUserPictureImageBorderMouseOver" StartPoint="0,0" EndPoint="0,1">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#ece2cd" Offset="0"/>
+                    <GradientStop Color="#c69a3e" Offset="1"/>
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="LeagueUserPictureImageBorderPressed" StartPoint="0,0" EndPoint="0,1">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="#453614" Offset="0"/>
+                    <GradientStop Color="#694f24" Offset="1"/>
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+            <SolidColorBrush x:Key="LeagueUserPictureImageBorderDisabled" Color="#5c5b57"/>
+        </ResourceDictionary>
+    </Button.Resources>
+    <Button.Style>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ImageMainBorder" BorderThickness="2" BorderBrush="{StaticResource LeagueUserPictureImageBorderDefault}" CornerRadius="16">
+                            <Border BorderBrush="{StaticResource LeagueUserPictureImageVignette}" CornerRadius="16" BorderThickness="1">
+                                <Image x:Name="Image" OpacityMask="{StaticResource LeagueUserPictureImageOpacityMask}" Source="{Binding RelativeSource={RelativeSource AncestorType=local:UserPictureButton}, Path=ImageSource}"/>
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ImageMainBorder" Property="BorderBrush" Value="{StaticResource LeagueUserPictureImageBorderMouseOver}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ImageMainBorder" Property="BorderBrush" Value="{StaticResource LeagueUserPictureImageBorderPressed}"/>
+                                <Setter TargetName="Image" Property="Opacity" Value="0.7"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="ImageMainBorder" Property="BorderBrush" Value="{StaticResource LeagueUserPictureImageBorderDisabled}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Button.Style>
+</Button>

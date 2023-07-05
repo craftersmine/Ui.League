@@ -10,7 +10,15 @@
     <FontFamily x:Key="SpiegelSemiBold">/craftersmine.Ui.League;component/Fonts/Spiegel/#Spiegel SemiBold</FontFamily>
 
     <SolidColorBrush x:Key="LeagueWindowBackground" Color="#010a13"/>
-    
+
+
+    <LinearGradientBrush x:Key="LeagueUserPictureImageBorderDefault" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#b99c5f" Offset="0"/>
+            <GradientStop Color="#664d27" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
     <!--#region Status Brushes-->
     <SolidColorBrush x:Key="LeagueStatusBorderOnline" Color="#36d987"/>
     <SolidColorBrush x:Key="LeagueStatusBorderInGame" Color="#0ac4df"/>
