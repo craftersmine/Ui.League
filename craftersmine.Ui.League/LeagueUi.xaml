@@ -256,6 +256,14 @@
     <Geometry x:Key="LeagueExpanderArrowPathDataDefault">M 2 0 L 5 3 5 4 2 7 M 2 0 2 7</Geometry>
     <!--#endregion-->
 
+    <!--#region ListBox Brushes-->
+    <SolidColorBrush x:Key="LeagueListBoxItemBackgroundMouseOver" Color="#192026"/>
+    <SolidColorBrush x:Key="LeagueListBoxItemForegroundDefault" Color="#a09b8c"/>
+    <SolidColorBrush x:Key="LeagueListBoxItemForegroundMouseOver" Color="#f0e6d2"/>
+    <SolidColorBrush x:Key="LeagueListBoxItemForegroundPressed" Color="#cdbe91"/>
+    <SolidColorBrush x:Key="LeagueListBoxItemForegroundDisabled" Color="#4d4a44"/>
+    <!--#endregion-->
+
     <Style TargetType="Window" x:Key="LeagueWindowStyle">
         <Style.Setters>
             <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
@@ -1063,6 +1071,102 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsExpanded" Value="true">
                             <Setter Property="Visibility" TargetName="ExpanderContent" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ListBox">
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource LeagueListBoxItemForegroundDefault}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <ScrollViewer>
+                        <StackPanel IsItemsHost="True"/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="ListBoxItem">
+        <Setter Property="Padding" Value="8 4"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border x:Name="ListBoxItemBorder" Padding="{TemplateBinding Padding}">
+                        <ContentControl x:Name="ListBoxItemContent" Content="{TemplateBinding Content}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ListBoxItemBorder" Property="Background" Value="{StaticResource LeagueListBoxItemBackgroundMouseOver}"/>
+                            <Setter TargetName="ListBoxItemContent" Property="Foreground" Value="{StaticResource LeagueListBoxItemForegroundMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="ListBoxItemBorder" Property="Background" Value="{StaticResource LeagueListBoxItemBackgroundMouseOver}"/>
+                            <Setter TargetName="ListBoxItemContent" Property="Foreground" Value="{StaticResource LeagueListBoxItemForegroundDefault}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ListBoxItemBorder" Property="Background" Value="Transparent"/>
+                            <Setter TargetName="ListBoxItemContent" Property="Foreground" Value="{StaticResource LeagueListBoxItemForegroundDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ListView">
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource LeagueListBoxItemForegroundDefault}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <ScrollViewer>
+                        <StackPanel IsItemsHost="True"/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="ListViewItem">
+        <Setter Property="Padding" Value="8 4"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <Border x:Name="ListViewItemBorder" Padding="{TemplateBinding Padding}">
+                        <ContentControl x:Name="ListViewItemContent" Content="{TemplateBinding Content}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ListViewItemBorder" Property="Background" Value="{StaticResource LeagueListBoxItemBackgroundMouseOver}"/>
+                            <Setter TargetName="ListViewItemContent" Property="Foreground" Value="{StaticResource LeagueListBoxItemForegroundMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="ListViewItemBorder" Property="Background" Value="{StaticResource LeagueListBoxItemBackgroundMouseOver}"/>
+                            <Setter TargetName="ListViewItemContent" Property="Foreground" Value="{StaticResource LeagueListBoxItemForegroundDefault}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ListViewItemBorder" Property="Background" Value="Transparent"/>
+                            <Setter TargetName="ListViewItemContent" Property="Foreground" Value="{StaticResource LeagueListBoxItemForegroundDisabled}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
