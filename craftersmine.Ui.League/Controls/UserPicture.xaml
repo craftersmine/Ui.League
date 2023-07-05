@@ -7,6 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="32" d:DesignWidth="32" MinHeight="32" MinWidth="32" MaxHeight="32" MaxWidth="32"
          BorderThickness="2" BorderBrush="{StaticResource LeagueUserPictureImageBorderDefault}" CornerRadius="16">
+    <Border.Resources>
+        <ResourceDictionary>
+            <RadialGradientBrush x:Key="LeagueUserPictureImageOpacityMask" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                <RadialGradientBrush.GradientStops>
+                    <GradientStop Color="#000" Offset="0"/>
+                    <GradientStop Color="#000" Offset="0.9999"/>
+                    <GradientStop Color="Transparent" Offset="1"/>
+                </RadialGradientBrush.GradientStops>
+            </RadialGradientBrush>
+
+            <RadialGradientBrush x:Key="LeagueUserPictureImageVignette" Center="0.5,0.5" GradientOrigin="0.5,0.5">
+                <RadialGradientBrush.GradientStops>
+                    <GradientStop Color="Transparent" Offset="0"/>
+                    <GradientStop Color="#33000000" Offset="1"/>
+                </RadialGradientBrush.GradientStops>
+            </RadialGradientBrush>
+            <SolidColorBrush x:Key="LeagueUserPictureImageBorderDisabled" Color="#5c5b57"/>
+        </ResourceDictionary>
+    </Border.Resources>
     <Border BorderBrush="{StaticResource LeagueUserPictureImageVignette}" CornerRadius="16" BorderThickness="1">
         <Image x:Name="Image" OpacityMask="{StaticResource LeagueUserPictureImageOpacityMask}" Source="{Binding RelativeSource={RelativeSource AncestorType=local:UserPicture}, Path=ImageSource}"/>
     </Border>
