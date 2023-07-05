@@ -17,10 +17,6 @@
     <None Remove="Fonts\BeaufortforLOL-Medium.ttf" />
     <None Remove="Fonts\BeaufortforLOL-MediumItalic.ttf" />
     <None Remove="Fonts\BeaufortforLOL-Regular.ttf" />
-    <None Remove="Fonts\PTSans\PTSans-Bold.ttf" />
-    <None Remove="Fonts\PTSans\PTSans-BoldItalic.ttf" />
-    <None Remove="Fonts\PTSans\PTSans-Italic.ttf" />
-    <None Remove="Fonts\PTSans\PTSans-Regular.ttf" />
     <None Remove="Fonts\Spiegel\spiegel-bold.otf" />
     <None Remove="Fonts\Spiegel\spiegel-bolditalic.otf" />
     <None Remove="Fonts\Spiegel\spiegel-regular.otf" />
@@ -40,10 +36,6 @@
     <Resource Include="Fonts\Beaufort\BeaufortforLOL-Medium.ttf" />
     <Resource Include="Fonts\Beaufort\BeaufortforLOL-MediumItalic.ttf" />
     <Resource Include="Fonts\Beaufort\BeaufortforLOL-Regular.ttf" />
-    <Resource Include="Fonts\PTSans\PTSans-Bold.ttf" />
-    <Resource Include="Fonts\PTSans\PTSans-BoldItalic.ttf" />
-    <Resource Include="Fonts\PTSans\PTSans-Italic.ttf" />
-    <Resource Include="Fonts\PTSans\PTSans-Regular.ttf" />
     <Resource Include="Fonts\Spiegel\spiegel-bold.otf" />
     <Resource Include="Fonts\Spiegel\spiegel-bolditalic.otf" />
     <Resource Include="Fonts\Spiegel\spiegel-regular.otf" />
