@@ -1,6 +1,7 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:craftersmine.Ui.League.Controls"
     >
 
     <FontFamily x:Key="BeaufortForLOL">/craftersmine.Ui.League;component/Fonts/Beaufort/#Beaufort for LoL</FontFamily>
@@ -8,6 +9,19 @@
     <FontFamily x:Key="SpiegelRegular">/craftersmine.Ui.League;component/Fonts/Spiegel/#Spiegel Regular</FontFamily>
     <FontFamily x:Key="SpiegelSemiBold">/craftersmine.Ui.League;component/Fonts/Spiegel/#Spiegel SemiBold</FontFamily>
 
+    <SolidColorBrush x:Key="LeagueWindowBackground" Color="#010a13"/>
+    
+    <!--#region Status Brushes-->
+    <SolidColorBrush x:Key="LeagueStatusBorderOnline" Color="#36d987"/>
+    <SolidColorBrush x:Key="LeagueStatusBorderInGame" Color="#0ac4df"/>
+    <SolidColorBrush x:Key="LeagueStatusBorderBusy" Color="#b71d36"/>
+    <SolidColorBrush x:Key="LeagueStatusBorderOffline" Color="#3b4043"/>
+    <SolidColorBrush x:Key="LeagueStatusBackgroundOnline" Color="#1e825a"/>
+    <SolidColorBrush x:Key="LeagueStatusBackgroundInGame" Color="#025579"/>
+    <SolidColorBrush x:Key="LeagueStatusBackgroundBusy" Color="#400a12"/>
+    <SolidColorBrush x:Key="LeagueStatusBackgroundOffline" Color="#0f1a21"/>
+    <!--#endregion-->
+    
     <!--#region Button Brushes-->
     <LinearGradientBrush x:Key="LeagueButtonBorderDefault" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
@@ -41,13 +55,15 @@
     <SolidColorBrush x:Key="LeagueButtonTextColorDisabled" Color="#5c5b57"/>
     <!--#endregion-->
 
-    <SolidColorBrush x:Key="LeagueWindowBackground" Color="#010a13"/>
-
     <!--#region Text Brushes-->
     <SolidColorBrush x:Key="LeagueTextColorDefault" Color="#938f82"/>
     <SolidColorBrush x:Key="LeagueTextColorMouseOver" Color="#ede3cf"/>
     <SolidColorBrush x:Key="LeagueTextColorPressed" Color="#785a28"/>
     <SolidColorBrush x:Key="LeagueTextColorDisabled" Color="#4d4a44"/>
+    <SolidColorBrush x:Key="LeagueTextColorOnline" Color="#36d987"/>
+    <SolidColorBrush x:Key="LeagueTextColorInGame" Color="#0ac4df"/>
+    <SolidColorBrush x:Key="LeagueTextColorBusy" Color="#b71d36"/>
+    <SolidColorBrush x:Key="LeagueTextColorOffline" Color="#3b4043"/>
     <!--#endregion-->
 
     <!--#region CheckBox Brushes-->
@@ -104,6 +120,8 @@
 
     <!--#region GroupBox Brushes-->
     <SolidColorBrush x:Key="LeagueGroupBoxBorder" Color="#1e282d"/>
+    <SolidColorBrush x:Key="LeagueGroupBoxBorderAccent" Color="#785a28"/>
+    <SolidColorBrush x:Key="LeagueGroupBoxHeaderAccent" Color="#a09b8c"/>
     <!--#endregion-->
 
     <!--#region TextBox Brushes-->
@@ -264,6 +282,13 @@
     <SolidColorBrush x:Key="LeagueListBoxItemForegroundDisabled" Color="#4d4a44"/>
     <!--#endregion-->
 
+    <!--#region Hyperlink-->
+    <SolidColorBrush x:Key="LeagueHyperlinkDefault" Color="#0590a4"/>
+    <SolidColorBrush x:Key="LeagueHyperlinkMouseOver" Color="#c5f0f1"/>
+    <SolidColorBrush x:Key="LeagueHyperlinkPressed" Color="#c5f0f1"/>
+    <SolidColorBrush x:Key="LeagueHyperlinkDisabled" Color="#4d4a44"/>
+    <!--#endregion-->
+
     <Style TargetType="Window" x:Key="LeagueWindowStyle">
         <Style.Setters>
             <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
@@ -373,6 +398,20 @@
         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
         <Setter Property="FontSize" Value="11pt"/>
     </Style>
+        
+     <Style TargetType="{x:Type TextBlock}" x:Key="LeagueOnlineText" BasedOn="{StaticResource LeagueDefaultText}">
+         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorOnline}"/>
+         <Setter Property="FontSize" Value="8pt"/>
+     </Style>
+     <Style TargetType="{x:Type TextBlock}" x:Key="LeagueInGameText" BasedOn="{StaticResource LeagueOnlineText}">
+         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorInGame}"/>
+     </Style>
+     <Style TargetType="{x:Type TextBlock}" x:Key="LeagueBusyText" BasedOn="{StaticResource LeagueOnlineText}">
+         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorBusy}"/>
+     </Style>
+     <Style TargetType="{x:Type TextBlock}" x:Key="LeagueOfflineText" BasedOn="{StaticResource LeagueOnlineText}">
+         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorOffline}"/>
+     </Style>
 
     <Style TargetType="Label">
         <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>

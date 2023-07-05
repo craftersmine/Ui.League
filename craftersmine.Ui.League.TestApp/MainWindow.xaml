@@ -4,20 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:craftersmine.Ui.League"
+        xmlns:controls="clr-namespace:craftersmine.Ui.League.Controls;assembly=craftersmine.Ui.League"
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="craftersmine.Ui.League.TestWindow"
         mc:Ignorable="d"
         Title="TestWindow" Height="450" Width="800" Style="{StaticResource LeagueWindowStyle}">
-    <Window.Resources>
-        <ResourceDictionary>
-            <CollectionViewSource x:Key='Data' 
-                      Source="{Binding Source={StaticResource MyData}, 
-                               XPath=Item}">
-                <CollectionViewSource.GroupDescriptions>
-                    <PropertyGroupDescription PropertyName="@Catalog" />
-                </CollectionViewSource.GroupDescriptions>
-            </CollectionViewSource>
-        </ResourceDictionary>
-    </Window.Resources>
     <ScrollViewer>
         <WrapPanel>
             <GroupBox Header="Buttons" Margin="10" Width="240">
@@ -100,17 +90,19 @@
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="TabView" Margin="10" Width="240">
-                <TabControl Height="200">
-                    <TabItem Header="Tab 1">
-                        <TextBlock Text="Lorem Ipsum Tab 1" Style="{StaticResource LeagueDefaultText}"/>
-                    </TabItem>
-                    <TabItem Header="Tab 2">
-                        <TextBlock Text="Lorem Ipsum Tab 2" Style="{StaticResource LeagueDefaultText}"/>
-                    </TabItem>
-                    <TabItem Header="Tab Disabled" IsEnabled="False">
-                        <TextBlock Text="Lorem Ipsum Tab Disabled" Style="{StaticResource LeagueDefaultText}"/>
-                    </TabItem>
-                </TabControl>
+                <StackPanel>
+                    <TabControl Height="200">
+                        <TabItem Header="Tab 1">
+                            <TextBlock Text="Lorem Ipsum Tab 1" Style="{StaticResource LeagueDefaultText}"/>
+                        </TabItem>
+                        <TabItem Header="Tab 2">
+                            <TextBlock Text="Lorem Ipsum Tab 2" Style="{StaticResource LeagueDefaultText}"/>
+                        </TabItem>
+                        <TabItem Header="Tab Disabled" IsEnabled="False">
+                            <TextBlock Text="Lorem Ipsum Tab Disabled" Style="{StaticResource LeagueDefaultText}"/>
+                        </TabItem>
+                    </TabControl>
+                </StackPanel>
             </GroupBox>
             <GroupBox Header="Expander" Margin="10" Width="240">
                 <StackPanel>
@@ -205,6 +197,38 @@
                         <ListViewItem Content="Rift Scuttler"/>
                     </ListView>
 
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Hyperlink" Margin="10" Width="240">
+                <StackPanel>
+                    <TextBlock><Hyperlink>Hyperlink</Hyperlink></TextBlock>
+                    <TextBlock><Hyperlink IsEnabled="False">Hyperlink Disabled</Hyperlink></TextBlock>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="CircleButton" Margin="10" Width="240">
+                <StackPanel>
+                    <controls:CircleButton Content="Test"/>
+                    <controls:CircleButton Content="Test" IsEnabled="False"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="StatusPoint" Margin="10" Width="240">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <controls:StatusPoint StatusType="Online" Margin="5" VerticalAlignment="Center"/>
+                        <TextBlock Style="{StaticResource LeagueOnlineText}" VerticalAlignment="Center">Online</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:StatusPoint StatusType="InGame" Margin="5" VerticalAlignment="Center"/>
+                        <TextBlock Style="{StaticResource LeagueInGameText}" VerticalAlignment="Center">InGame</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:StatusPoint StatusType="Busy" Margin="5" VerticalAlignment="Center"/>
+                        <TextBlock Style="{StaticResource LeagueBusyText}" VerticalAlignment="Center">Busy</TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:StatusPoint StatusType="Offline" Margin="5" VerticalAlignment="Center"/>
+                        <TextBlock Style="{StaticResource LeagueOfflineText}" VerticalAlignment="Center">Offline</TextBlock>
+                    </StackPanel>
                 </StackPanel>
             </GroupBox>
         </WrapPanel>

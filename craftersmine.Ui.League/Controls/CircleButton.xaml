@@ -1,0 +1,62 @@
+﻿<Button x:Class="craftersmine.Ui.League.Controls.CircleButton"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:craftersmine.Ui.League.Controls"
+        mc:Ignorable="d" 
+        d:DesignHeight="32" d:DesignWidth="32" Width="32" Height="32" MaxHeight="32" MaxWidth="32" MinWidth="32" MinHeight="32"
+        >
+    <Button.Resources>
+        <ResourceDictionary>
+            <LinearGradientBrush x:Key="LeagueCircleButtonBorderDefault" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#be9f5e" Offset="0"/>
+                <GradientStop Color="#694f27" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="LeagueCircleButtonBorderMouseOver" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#eee3ce" Offset="0"/>
+                <GradientStop Color="#c79b3e" Offset="1"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="LeagueCircleButtonBorderPressed" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#785a28" Offset="0"/>
+                <GradientStop Color="#765927" Offset="1"/>
+            </LinearGradientBrush>
+            <SolidColorBrush x:Key="LeagueCircleButtonBorderDisabled" Color="#5c5b57"/>
+            <SolidColorBrush x:Key="LeagueCircleButtonBackgroundDefault" Color="#1e2328"/>
+            <SolidColorBrush x:Key="LeagueCircleButtonBackgroundMouseOver" Color="#1e282d"/>
+            <SolidColorBrush x:Key="LeagueCircleButtonBackgroundPressed" Color="#1e2328"/>
+            <SolidColorBrush x:Key="LeagueCircleButtonBackgroundDisabled" Color="#1e2328"/>
+        </ResourceDictionary>
+    </Button.Resources>
+    <Button.Style>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="ButtonBorder" Width="32" Height="32" BorderThickness="2" Background="{StaticResource LeagueCircleButtonBackgroundDefault}" BorderBrush="{StaticResource LeagueCircleButtonBorderDefault}" CornerRadius="16">
+                            <ContentControl x:Name="ButtonContent" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueCircleButtonBorderMouseOver}"/>
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource LeagueCircleButtonBackgroundMouseOver}"/>
+                                <Setter TargetName="ButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorMouseOver}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueCircleButtonBorderPressed}"/>
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource LeagueCircleButtonBackgroundPressed}"/>
+                                <Setter TargetName="ButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorPressed}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueCircleButtonBorderDisabled}"/>
+                                <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource LeagueCircleButtonBackgroundDisabled}"/>
+                                <Setter TargetName="ButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorDisabled}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Button.Style>
+</Button>
