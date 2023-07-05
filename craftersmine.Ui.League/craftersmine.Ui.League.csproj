@@ -1,57 +1,86 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<RootNamespace>craftersmine.Ui.League</RootNamespace>
+		<Version>1.0.0</Version>
+		<Authors>craftersmine</Authors>
+		<Description>WPF library with styles from League of Legends Client</Description>
+		<Copyright>Copyright © craftersmine 2023</Copyright>
+		<PackageProjectUrl>https://github.com/craftersmine/Ui.League</PackageProjectUrl>
+		<PackageIcon>NuGetPackageIcon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/craftersmine/Ui.League</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<DebugType>portable</DebugType>
+		<PackageIcon>NuGetPackageIcon.png</PackageIcon>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Fonts\BeaufortforLOL-Bold.ttf" />
-    <None Remove="Fonts\BeaufortforLOL-BoldItalic.ttf" />
-    <None Remove="Fonts\BeaufortforLOL-Heavy.ttf" />
-    <None Remove="Fonts\BeaufortforLOL-HeavyItalic.ttf" />
-    <None Remove="Fonts\BeaufortforLOL-Italic.ttf" />
-    <None Remove="Fonts\BeaufortforLOL-Light.ttf" />
-    <None Remove="Fonts\BeaufortforLOL-LightItalic.ttf" />
-    <None Remove="Fonts\BeaufortforLOL-Medium.ttf" />
-    <None Remove="Fonts\BeaufortforLOL-MediumItalic.ttf" />
-    <None Remove="Fonts\BeaufortforLOL-Regular.ttf" />
-    <None Remove="Fonts\Spiegel\spiegel-bold.otf" />
-    <None Remove="Fonts\Spiegel\spiegel-bolditalic.otf" />
-    <None Remove="Fonts\Spiegel\spiegel-regular.otf" />
-    <None Remove="Fonts\Spiegel\spiegel-regularitalic.otf" />
-    <None Remove="Fonts\Spiegel\spiegel-semibold.otf" />
-    <None Remove="Fonts\Spiegel\spiegel-semibolditalic.otf" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Fonts\BeaufortforLOL-Bold.ttf" />
+		<None Remove="Fonts\BeaufortforLOL-BoldItalic.ttf" />
+		<None Remove="Fonts\BeaufortforLOL-Heavy.ttf" />
+		<None Remove="Fonts\BeaufortforLOL-HeavyItalic.ttf" />
+		<None Remove="Fonts\BeaufortforLOL-Italic.ttf" />
+		<None Remove="Fonts\BeaufortforLOL-Light.ttf" />
+		<None Remove="Fonts\BeaufortforLOL-LightItalic.ttf" />
+		<None Remove="Fonts\BeaufortforLOL-Medium.ttf" />
+		<None Remove="Fonts\BeaufortforLOL-MediumItalic.ttf" />
+		<None Remove="Fonts\BeaufortforLOL-Regular.ttf" />
+		<None Remove="Fonts\Spiegel\spiegel-bold.otf" />
+		<None Remove="Fonts\Spiegel\spiegel-bolditalic.otf" />
+		<None Remove="Fonts\Spiegel\spiegel-regular.otf" />
+		<None Remove="Fonts\Spiegel\spiegel-regularitalic.otf" />
+		<None Remove="Fonts\Spiegel\spiegel-semibold.otf" />
+		<None Remove="Fonts\Spiegel\spiegel-semibolditalic.otf" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="Fonts\Beaufort\BeaufortforLOL-Bold.ttf" />
-    <Resource Include="Fonts\Beaufort\BeaufortforLOL-BoldItalic.ttf" />
-    <Resource Include="Fonts\Beaufort\BeaufortforLOL-Heavy.ttf" />
-    <Resource Include="Fonts\Beaufort\BeaufortforLOL-HeavyItalic.ttf" />
-    <Resource Include="Fonts\Beaufort\BeaufortforLOL-Italic.ttf" />
-    <Resource Include="Fonts\Beaufort\BeaufortforLOL-Light.ttf" />
-    <Resource Include="Fonts\Beaufort\BeaufortforLOL-LightItalic.ttf" />
-    <Resource Include="Fonts\Beaufort\BeaufortforLOL-Medium.ttf" />
-    <Resource Include="Fonts\Beaufort\BeaufortforLOL-MediumItalic.ttf" />
-    <Resource Include="Fonts\Beaufort\BeaufortforLOL-Regular.ttf" />
-    <Resource Include="Fonts\Spiegel\spiegel-bold.otf" />
-    <Resource Include="Fonts\Spiegel\spiegel-bolditalic.otf" />
-    <Resource Include="Fonts\Spiegel\spiegel-regular.otf" />
-    <Resource Include="Fonts\Spiegel\spiegel-regularitalic.otf" />
-    <Resource Include="Fonts\Spiegel\spiegel-semibold.otf" />
-    <Resource Include="Fonts\Spiegel\spiegel-semibolditalic.otf" />
-  </ItemGroup>
+	<ItemGroup>
+		<Resource Include="Fonts\Beaufort\BeaufortforLOL-Bold.ttf" />
+		<Resource Include="Fonts\Beaufort\BeaufortforLOL-BoldItalic.ttf" />
+		<Resource Include="Fonts\Beaufort\BeaufortforLOL-Heavy.ttf" />
+		<Resource Include="Fonts\Beaufort\BeaufortforLOL-HeavyItalic.ttf" />
+		<Resource Include="Fonts\Beaufort\BeaufortforLOL-Italic.ttf" />
+		<Resource Include="Fonts\Beaufort\BeaufortforLOL-Light.ttf" />
+		<Resource Include="Fonts\Beaufort\BeaufortforLOL-LightItalic.ttf" />
+		<Resource Include="Fonts\Beaufort\BeaufortforLOL-Medium.ttf" />
+		<Resource Include="Fonts\Beaufort\BeaufortforLOL-MediumItalic.ttf" />
+		<Resource Include="Fonts\Beaufort\BeaufortforLOL-Regular.ttf" />
+		<Resource Include="Fonts\Spiegel\spiegel-bold.otf" />
+		<Resource Include="Fonts\Spiegel\spiegel-bolditalic.otf" />
+		<Resource Include="Fonts\Spiegel\spiegel-regular.otf" />
+		<Resource Include="Fonts\Spiegel\spiegel-regularitalic.otf" />
+		<Resource Include="Fonts\Spiegel\spiegel-semibold.otf" />
+		<Resource Include="Fonts\Spiegel\spiegel-semibolditalic.otf" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Styles\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Styles\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Controls\UserPicture.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+	  <None Include="..\NuGetPackageIcon.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Controls\UserPicture.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+	</ItemGroup>
 
 </Project>
