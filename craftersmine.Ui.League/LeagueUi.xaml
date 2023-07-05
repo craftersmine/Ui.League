@@ -1192,4 +1192,17 @@
         </Setter>
     </Style>
 
+    <Style TargetType="Hyperlink">
+        <Setter Property="Foreground" Value="{StaticResource LeagueHyperlinkDefault}"/>
+        <Setter Property="TextDecorations" Value="None"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource LeagueHyperlinkMouseOver}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{StaticResource LeagueHyperlinkDisabled}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 </ResourceDictionary>
