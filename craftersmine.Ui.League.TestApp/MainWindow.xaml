@@ -103,6 +103,16 @@
                     </TabItem>
                 </TabControl>
             </GroupBox>
+            <GroupBox Header="Expander" Margin="10" Width="240">
+                <StackPanel>
+                    <Expander Header="Expander">
+                        <TextBlock Text="Lorem Ipsum Sit Dolor Amet" Style="{StaticResource LeagueDefaultText}"/>
+                    </Expander>
+                    <Expander Header="Expander Disabled" IsEnabled="False">
+                        <TextBlock Text="Lorem Ipsum Sit Dolor Amet" Style="{StaticResource LeagueDefaultText}"/>
+                    </Expander>
+                </StackPanel>
+            </GroupBox>
         </WrapPanel>
     </ScrollViewer>
 </Window>

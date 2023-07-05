@@ -242,6 +242,20 @@
     <SolidColorBrush x:Key="LeagueScrollBarDisabled" Color="#3c3c3d"/>
     <!--#endregion-->
 
+    <!--#region Expander Brushes-->
+    <SolidColorBrush x:Key="LeagueExpanderArrowDefault" Color="#a09b8c"/>
+    <SolidColorBrush x:Key="LeagueExpanderArrowMouseOver" Color="#f0e6d2"/>
+    <SolidColorBrush x:Key="LeagueExpanderArrowPressed" Color="#cdbe91"/>
+    <SolidColorBrush x:Key="LeagueExpanderArrowDisabled" Color="#5c5b57"/>
+    <SolidColorBrush x:Key="LeagueExpanderHeaderForegroundDefault" Color="#a09b8c"/>
+    <SolidColorBrush x:Key="LeagueExpanderHeaderForegroundMouseOver" Color="#f0e6d2"/>
+    <SolidColorBrush x:Key="LeagueExpanderHeaderForegroundPressed" Color="#cdbe91"/>
+    <SolidColorBrush x:Key="LeagueExpanderHeaderForegroundDisabled" Color="#4d4a44"/>
+    <SolidColorBrush x:Key="LeagueExpanderHeaderBackgroundMouseOver" Color="#192026"/>
+    <Geometry x:Key="LeagueExpanderArrowPathDataExpanded">M 0 3 L 3 6 3 6 6 3 6 3 0 3</Geometry>
+    <Geometry x:Key="LeagueExpanderArrowPathDataDefault">M 2 0 L 5 3 5 4 2 7 M 2 0 2 7</Geometry>
+    <!--#endregion-->
+
     <Style TargetType="Window" x:Key="LeagueWindowStyle">
         <Style.Setters>
             <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
@@ -976,5 +990,84 @@
         </Setter>
     </Style>
 
+    <Style TargetType="Expander">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Expander">
+                    <Border>
+                        <DockPanel>
+                            <ToggleButton x:Name="ExpanderButton" DockPanel.Dock="Top" 
+                                          ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}"
+                                          ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                                          Background="Transparent"
+                                          HorizontalContentAlignment="Left" 
+                                          IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                          VerticalContentAlignment="Center">
+                                <ToggleButton.Style>
+                                    <Style TargetType="ToggleButton">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ToggleButton">
+                                                    <Grid Height="24" x:Name="ExpanderHeaderContainer">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="16"/>
+                                                            <ColumnDefinition/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Path Height="8" Width="8" Grid.Column="0" x:Name="Arrow" Margin="6 0 0 0"
+                                                              Stroke="{StaticResource LeagueExpanderArrowDefault}"
+                                                              StrokeThickness="1" SnapsToDevicePixels="True"
+                                                              Fill="{StaticResource LeagueExpanderArrowDefault}"
+                                                              Data="{StaticResource LeagueExpanderArrowPathDataDefault}"/>
+                                                        <ContentControl Grid.Column="1" VerticalAlignment="Center" 
+                                                                        x:Name="ExpanderHeader" Margin="6 0 0 0"
+                                                                        HorizontalAlignment="Stretch" 
+                                                                        Content="{TemplateBinding Content}"
+                                                                        Foreground="{StaticResource LeagueExpanderHeaderForegroundDefault}"
+                                                                        FontFamily="{StaticResource BeaufortForLOL}" FontWeight="Bold"/>
+                                                    </Grid>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsChecked" Value="True">
+                                                            <Setter TargetName="Arrow" Property="Data" Value="{StaticResource LeagueExpanderArrowPathDataExpanded}"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter TargetName="Arrow" Property="Fill" Value="{StaticResource LeagueExpanderArrowMouseOver}"/>
+                                                            <Setter TargetName="Arrow" Property="Stroke" Value="{StaticResource LeagueExpanderArrowMouseOver}"/>
+                                                            <Setter TargetName="ExpanderHeader" Property="Foreground" Value="{StaticResource LeagueExpanderHeaderForegroundMouseOver}"/>
+                                                            <Setter TargetName="ExpanderHeaderContainer" Property="Background" Value="{StaticResource LeagueExpanderHeaderBackgroundMouseOver}"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsPressed" Value="True">
+                                                            <Setter TargetName="Arrow" Property="Fill" Value="{StaticResource LeagueExpanderArrowPressed}"/>
+                                                            <Setter TargetName="Arrow" Property="Stroke" Value="{StaticResource LeagueExpanderArrowPressed}"/>
+                                                            <Setter TargetName="ExpanderHeader" Property="Foreground" Value="{StaticResource LeagueExpanderHeaderForegroundPressed}"/>
+                                                            <Setter TargetName="ExpanderHeaderContainer" Property="Background" Value="{StaticResource LeagueExpanderHeaderBackgroundMouseOver}"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsEnabled" Value="False">
+                                                            <Setter TargetName="Arrow" Property="Fill" Value="{StaticResource LeagueExpanderArrowDisabled}"/>
+                                                            <Setter TargetName="Arrow" Property="Stroke" Value="{StaticResource LeagueExpanderArrowDisabled}"/>
+                                                            <Setter TargetName="ExpanderHeader" Property="Foreground" Value="{StaticResource LeagueExpanderHeaderForegroundDisabled}"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ToggleButton.Style>
+                            </ToggleButton>
+                            <ContentPresenter x:Name="ExpanderContent" DockPanel.Dock="Bottom" 
+                                              Content="{TemplateBinding Content}" 
+                                              Visibility="Collapsed" 
+                                              Margin="{TemplateBinding Padding}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </DockPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded" Value="true">
+                            <Setter Property="Visibility" TargetName="ExpanderContent" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>
