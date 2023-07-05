@@ -20,7 +20,7 @@ namespace craftersmine.Ui.League.Controls
     /// </summary>
     public partial class UserPicture : Border
     {
-        public ImageSource ImageSource { get; set; }
+        public ImageSource? ImageSource { get; set; }
 
         public UserPicture()
         {
