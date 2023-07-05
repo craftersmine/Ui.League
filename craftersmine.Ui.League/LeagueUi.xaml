@@ -985,6 +985,7 @@
                 <Thumb
                     x:Name="ScrollBarThumb"
                     Style="{StaticResource ScrollBarThumb}"
+                    Width="5"
                     Margin="1,0,1,0"
                     Background="{StaticResource LeagueScrollBarDefault}" />
             </Track.Thumb>
@@ -1012,6 +1013,7 @@
                 <Thumb
                     x:Name="ScrollBarThumb"
                     Style="{StaticResource ScrollBarThumbHor}"
+                    Height="5"
                     Margin="0,1,0,1"
                     Background="{StaticResource LeagueScrollBarDefault}" />
             </Track.Thumb>
@@ -1034,7 +1036,7 @@
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Horizontal">
                 <Setter Property="Width" Value="Auto" />
-                <Setter Property="Height" Value="10" />
+                <Setter Property="Height" Value="16" />
                 <Setter Property="Template" Value="{StaticResource HorizontalScrollBar}" />
             </Trigger>
             <Trigger Property="Orientation" Value="Vertical">
