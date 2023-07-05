@@ -16,10 +16,13 @@ using System.Windows.Shapes;
 namespace craftersmine.Ui.League.Controls
 {
     /// <summary>
-    /// Логика взаимодействия для CircleButton.xaml
+    /// Represents a circle button
     /// </summary>
     public partial class CircleButton : Button
     {
+        /// <summary>
+        /// Creates a new instance of <see cref="CircleButton"/>
+        /// </summary>
         public CircleButton()
         {
             InitializeComponent();

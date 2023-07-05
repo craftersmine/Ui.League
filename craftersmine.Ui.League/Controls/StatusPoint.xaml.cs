@@ -16,12 +16,15 @@ using System.Windows.Shapes;
 namespace craftersmine.Ui.League.Controls
 {
     /// <summary>
-    /// Логика взаимодействия для StatusPoint.xaml
+    /// Represents a status indicator
     /// </summary>
     public partial class StatusPoint : Border
     {
         private StatusType statusType;
 
+        /// <summary>
+        /// Gets or sets type of status to show
+        /// </summary>
         public StatusType StatusType
         {
             get => statusType;
@@ -50,17 +53,35 @@ namespace craftersmine.Ui.League.Controls
             }
         }
 
+        /// <summary>
+        /// Instantiates a new instance of <see cref="StatusPoint"/>
+        /// </summary>
         public StatusPoint()
         {
             InitializeComponent();
         }
     }
 
+    /// <summary>
+    /// Contains possible variants for <see cref="StatusPoint"/>
+    /// </summary>
     public enum StatusType
     {
+        /// <summary>
+        /// Online variant
+        /// </summary>
         Online,
+        /// <summary>
+        /// In-game variant
+        /// </summary>
         InGame,
+        /// <summary>
+        /// Busy variant
+        /// </summary>
         Busy,
+        /// <summary>
+        /// Offline variant
+        /// </summary>
         Offline
     }
 }

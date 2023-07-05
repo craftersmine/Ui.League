@@ -16,12 +16,18 @@ using System.Windows.Shapes;
 namespace craftersmine.Ui.League.Controls
 {
     /// <summary>
-    /// Логика взаимодействия для UserPicture.xaml
+    /// Represents a static control for user profile picture
     /// </summary>
     public partial class UserPicture : Border
     {
+        /// <summary>
+        /// Gets or sets image source
+        /// </summary>
         public ImageSource? ImageSource { get; set; }
 
+        /// <summary>
+        /// Instantiates a new instance of <see cref="UserPicture"/>
+        /// </summary>
         public UserPicture()
         {
             InitializeComponent();
