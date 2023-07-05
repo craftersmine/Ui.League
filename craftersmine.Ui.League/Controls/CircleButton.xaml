@@ -34,7 +34,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="ButtonBorder" Width="32" Height="32" BorderThickness="2" Background="{StaticResource LeagueCircleButtonBackgroundDefault}" BorderBrush="{StaticResource LeagueCircleButtonBorderDefault}" CornerRadius="16">
+                        <Border x:Name="ButtonBorder" Width="32" Height="32" BorderThickness="1" Background="{StaticResource LeagueCircleButtonBackgroundDefault}" BorderBrush="{StaticResource LeagueCircleButtonBorderDefault}" CornerRadius="16">
                             <ContentControl x:Name="ButtonContent" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
