@@ -95,9 +95,6 @@
                     <TabItem Header="Tab 2">
                         <TextBlock Text="Lorem Ipsum Tab 2" Style="{StaticResource LeagueDefaultText}"/>
                     </TabItem>
-                    <TabItem Header="Tab 3">
-                        <TextBlock Text="Lorem Ipsum Tab 3" Style="{StaticResource LeagueDefaultText}"/>
-                    </TabItem>
                     <TabItem Header="Tab Disabled" IsEnabled="False">
                         <TextBlock Text="Lorem Ipsum Tab Disabled" Style="{StaticResource LeagueDefaultText}"/>
                     </TabItem>
