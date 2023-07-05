@@ -8,9 +8,21 @@ WPF Library for styling your application like League of Legends Client
 ![GitHub Repo stars](https://img.shields.io/github/stars/craftersmine/Ui.League)
 ![Maintenance](https://img.shields.io/maintenance/yes/2023)
 
+Controls preview:
+![Controls Preview](https://github.com/craftersmine/Ui.League/blob/master/.github/ControlsPreview.png)
 
+## Installation:
+* Search for `craftersmine.Ui.League` in NuGet explorer in Visual Studio (or your IDE)
+* Using NuGet Package Manager: ```PM> craftersmine.Ui.League```
+* Download NuGet package from [Releases](https://github.com/craftersmine/Ui.League/releases) page and put it in your [Local NuGet Feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview)
+* Download packaged binaries from [Releases](https://github.com/craftersmine/Ui.League/releases) and link DLL Assembly to your project
 
-
-
+## Usage:
+* Add resource dictionary to whereever you want to use this styles 
+```xml
+<ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="pack://application:,,,/craftersmine.Ui.League;component/LeagueUi.xaml"/>
+</ResourceDictionary.MergedDictionaries>
+```
 
 ###### This project was created under Riot Games' ["Legal Jibber Jabber"](https://www.riotgames.com/en/legal) policy using assets owned by [Riot Games](https://www.riotgames.com). [Riot Games](https://www.riotgames.com) does not endorse or sponsor this project.
