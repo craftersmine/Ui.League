@@ -29,7 +29,7 @@
     <SolidColorBrush x:Key="LeagueStatusBackgroundBusy" Color="#400a12"/>
     <SolidColorBrush x:Key="LeagueStatusBackgroundOffline" Color="#0f1a21"/>
     <!--#endregion-->
-    
+
     <!--#region Button Brushes-->
     <LinearGradientBrush x:Key="LeagueButtonBorderDefault" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
@@ -72,6 +72,10 @@
     <SolidColorBrush x:Key="LeagueTextColorInGame" Color="#0ac4df"/>
     <SolidColorBrush x:Key="LeagueTextColorBusy" Color="#b71d36"/>
     <SolidColorBrush x:Key="LeagueTextColorOffline" Color="#3b4043"/>
+    <SolidColorBrush x:Key="LeagueTextColorHeader" Color="#f0e6d2"/>
+    <SolidColorBrush x:Key="LeagueTextColorSubHeader" Color="#dfd6c3"/>
+    <SolidColorBrush x:Key="LeagueTextColorLargeBrightDefault" Color="#e4dbc8"/>
+    <SolidColorBrush x:Key="LeagueTextColorBright" Color="#f0e6d2"/>
     <!--#endregion-->
 
     <!--#region CheckBox Brushes-->
@@ -399,28 +403,44 @@
         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
         <Setter Property="FontSize" Value="11pt"/>
     </Style>
-
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueBrightAccentText" BasedOn="{StaticResource LeagueAccentText}">
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorBright}"/>
+    </Style>
     <Style TargetType="{x:Type TextBlock}" x:Key="LeagueDefaultText">
         <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
-        <Setter Property="FontSize" Value="11pt"/>
+        <Setter Property="FontSize" Value="8pt"/>
     </Style>
-        
-     <Style TargetType="{x:Type TextBlock}" x:Key="LeagueOnlineText" BasedOn="{StaticResource LeagueDefaultText}">
-         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorOnline}"/>
-         <Setter Property="FontSize" Value="8pt"/>
-     </Style>
-     <Style TargetType="{x:Type TextBlock}" x:Key="LeagueInGameText" BasedOn="{StaticResource LeagueOnlineText}">
-         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorInGame}"/>
-     </Style>
-     <Style TargetType="{x:Type TextBlock}" x:Key="LeagueBusyText" BasedOn="{StaticResource LeagueOnlineText}">
-         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorBusy}"/>
-     </Style>
-     <Style TargetType="{x:Type TextBlock}" x:Key="LeagueOfflineText" BasedOn="{StaticResource LeagueOnlineText}">
-         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorOffline}"/>
-     </Style>
-
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueOnlineText" BasedOn="{StaticResource LeagueDefaultText}">
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorOnline}"/>
+        <Setter Property="FontSize" Value="8pt"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueInGameText" BasedOn="{StaticResource LeagueOnlineText}">
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorInGame}"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueBusyText" BasedOn="{StaticResource LeagueOnlineText}">
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorBusy}"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueOfflineText" BasedOn="{StaticResource LeagueOnlineText}">
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorOffline}"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueHeaderText" BasedOn="{StaticResource LeagueAccentText}">
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorHeader}"/>
+        <Setter Property="FontSize" Value="18pt"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueSubHeaderText" BasedOn="{StaticResource LeagueAccentText}">
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorSubHeader}"/>
+        <Setter Property="FontSize" Value="14pt"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueLargerDefaultText" BasedOn="{StaticResource LeagueDefaultText}">
+        <Setter Property="FontSize" Value="10pt"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="LeagueBrightLargerDefaultText" BasedOn="{StaticResource LeagueLargerDefaultText}">
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorLargeBrightDefault}"/>
+        <Setter Property="FontSize" Value="10pt"/>
+    </Style>
+    
     <Style TargetType="Label">
         <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
         <Setter Property="FontWeight" Value="Bold"/>
@@ -604,7 +624,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style TargetType="TextBox">
         <Setter Property="BorderBrush" Value="{StaticResource LeagueTextBoxBorderDefault}"/>
         <Setter Property="Padding" Value="4"/>

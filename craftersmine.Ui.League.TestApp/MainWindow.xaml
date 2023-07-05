@@ -231,6 +231,28 @@
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
+            <GroupBox Header="UserPicture" Margin="10" Width="240">
+                <StackPanel>
+                    <controls:UserPictureButton ImageSource="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/0.jpg"/>
+                    <controls:UserPictureButton ImageSource="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/0.jpg" IsEnabled="False"/>
+                    <controls:UserPicture ImageSource="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/0.jpg"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="TextBlock" Margin="10" Width="240">
+                <StackPanel>
+                    <TextBlock Text="Default" Style="{StaticResource LeagueDefaultText}" Margin="10"/>
+                    <TextBlock Text="Larger Default" Style="{StaticResource LeagueLargerDefaultText}" Margin="10"/>
+                    <TextBlock Text="Larger Bright Default" Style="{StaticResource LeagueBrightLargerDefaultText}" Margin="10"/>
+                    <TextBlock Text="Accent" Style="{StaticResource LeagueAccentText}" Margin="10"/>
+                    <TextBlock Text="Bright Accent" Style="{StaticResource LeagueBrightAccentText}" Margin="10"/>
+                    <TextBlock Text="Online" Style="{StaticResource LeagueOnlineText}" Margin="10"/>
+                    <TextBlock Text="InGame" Style="{StaticResource LeagueInGameText}" Margin="10"/>
+                    <TextBlock Text="Busy" Style="{StaticResource LeagueBusyText}" Margin="10"/>
+                    <TextBlock Text="Offline" Style="{StaticResource LeagueOfflineText}" Margin="10"/>
+                    <TextBlock Text="Header" Style="{StaticResource LeagueHeaderText}" Margin="10"/>
+                    <TextBlock Text="SubHeader" Style="{StaticResource LeagueSubHeaderText}" Margin="10"/>
+                </StackPanel>
+            </GroupBox>
         </WrapPanel>
     </ScrollViewer>
 </Window>
