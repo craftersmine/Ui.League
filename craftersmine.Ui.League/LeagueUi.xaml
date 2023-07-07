@@ -309,6 +309,60 @@
     <SolidColorBrush x:Key="LeagueHyperlinkDisabled" Color="#4d4a44"/>
     <!--#endregion-->
 
+    <!--#region ProgressBar Brushes-->
+    <SolidColorBrush x:Key="LeagueProgressBarBackgroundDefault" Color="#1e282d"/>
+    <SolidColorBrush x:Key="LeagueProgressBarBorderInnerDefault" Color="#010a13"/>
+    <SolidColorBrush x:Key="LeagueProgressBarBorderDefault" Color="#3c3c41"/>
+    <LinearGradientBrush x:Key="LeagueProgressBarForegroundDefault" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#005b82" Offset="0"/>
+            <GradientStop Color="#b2d9db" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LeagueProgressBarGreenForegroundDefault" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#072d21" Offset="0"/>
+            <GradientStop Color="#1fb356" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LeagueProgressBarPurpleForegroundDefault" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#282043" Offset="0"/>
+            <GradientStop Color="#bd74fe" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LeagueProgressBarLightBlueForegroundDefault" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#083140" Offset="0"/>
+            <GradientStop Color="#22c5ee" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LeagueProgressBarRedForegroundDefault" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#350f10" Offset="0"/>
+            <GradientStop Color="#fd1f03" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LeagueProgressBarDarkPurpleForegroundDefault" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#311342" Offset="0"/>
+            <GradientStop Color="#ee34fc" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LeagueProgressBarYellowForegroundDefault" StartPoint="0,0" EndPoint="1,0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#362e13" Offset="0"/>
+            <GradientStop Color="#fdb611" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <!--#endregion-->
+
     <Style TargetType="Window" x:Key="LeagueWindowStyle">
         <Style.Setters>
             <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
@@ -448,7 +502,7 @@
         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorLargeBrightDefault}"/>
         <Setter Property="FontSize" Value="10pt"/>
     </Style>
-    
+
     <Style TargetType="Label">
         <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
         <Setter Property="FontWeight" Value="Bold"/>
@@ -1282,4 +1336,95 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="ProgressBar">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border BorderBrush="{StaticResource LeagueProgressBarBorderDefault}" BorderThickness="1">
+                        <Border x:Name="PART_Track" Height="19" BorderBrush="{StaticResource LeagueProgressBarBorderInnerDefault}" BorderThickness="1" Background="{StaticResource LeagueProgressBarBackgroundDefault}">
+                            <Border x:Name="PART_Indicator" Background="{StaticResource LeagueProgressBarForegroundDefault}" HorizontalAlignment="Left"/>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LeagueGreenProgressBar" TargetType="ProgressBar" BasedOn="{StaticResource {x:Type ProgressBar}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border BorderBrush="{StaticResource LeagueProgressBarBorderDefault}" BorderThickness="1">
+                        <Border x:Name="PART_Track" Height="19" BorderBrush="{StaticResource LeagueProgressBarBorderInnerDefault}" BorderThickness="1" Background="{StaticResource LeagueProgressBarBackgroundDefault}">
+                            <Border x:Name="PART_Indicator" Background="{StaticResource LeagueProgressBarGreenForegroundDefault}" HorizontalAlignment="Left"/>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LeaguePurpleProgressBar" TargetType="ProgressBar" BasedOn="{StaticResource {x:Type ProgressBar}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border BorderBrush="{StaticResource LeagueProgressBarBorderDefault}" BorderThickness="1">
+                        <Border x:Name="PART_Track" Height="19" BorderBrush="{StaticResource LeagueProgressBarBorderInnerDefault}" BorderThickness="1" Background="{StaticResource LeagueProgressBarBackgroundDefault}">
+                            <Border x:Name="PART_Indicator" Background="{StaticResource LeagueProgressBarPurpleForegroundDefault}" HorizontalAlignment="Left"/>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LeagueLightBlueProgressBar" TargetType="ProgressBar" BasedOn="{StaticResource {x:Type ProgressBar}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border BorderBrush="{StaticResource LeagueProgressBarBorderDefault}" BorderThickness="1">
+                        <Border x:Name="PART_Track" Height="19" BorderBrush="{StaticResource LeagueProgressBarBorderInnerDefault}" BorderThickness="1" Background="{StaticResource LeagueProgressBarBackgroundDefault}">
+                            <Border x:Name="PART_Indicator" Background="{StaticResource LeagueProgressBarLightBlueForegroundDefault}" HorizontalAlignment="Left"/>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LeagueRedProgressBar" TargetType="ProgressBar" BasedOn="{StaticResource {x:Type ProgressBar}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border BorderBrush="{StaticResource LeagueProgressBarBorderDefault}" BorderThickness="1">
+                        <Border x:Name="PART_Track" Height="19" BorderBrush="{StaticResource LeagueProgressBarBorderInnerDefault}" BorderThickness="1" Background="{StaticResource LeagueProgressBarBackgroundDefault}">
+                            <Border x:Name="PART_Indicator" Background="{StaticResource LeagueProgressBarRedForegroundDefault}" HorizontalAlignment="Left"/>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LeagueDarkPurpleProgressBar" TargetType="ProgressBar" BasedOn="{StaticResource {x:Type ProgressBar}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border BorderBrush="{StaticResource LeagueProgressBarBorderDefault}" BorderThickness="1">
+                        <Border x:Name="PART_Track" Height="19" BorderBrush="{StaticResource LeagueProgressBarBorderInnerDefault}" BorderThickness="1" Background="{StaticResource LeagueProgressBarBackgroundDefault}">
+                            <Border x:Name="PART_Indicator" Background="{StaticResource LeagueProgressBarDarkPurpleForegroundDefault}" HorizontalAlignment="Left"/>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LeagueYellowProgressBar" TargetType="ProgressBar" BasedOn="{StaticResource {x:Type ProgressBar}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border BorderBrush="{StaticResource LeagueProgressBarBorderDefault}" BorderThickness="1">
+                        <Border x:Name="PART_Track" Height="19" BorderBrush="{StaticResource LeagueProgressBarBorderInnerDefault}" BorderThickness="1" Background="{StaticResource LeagueProgressBarBackgroundDefault}">
+                            <Border x:Name="PART_Indicator" Background="{StaticResource LeagueProgressBarYellowForegroundDefault}" HorizontalAlignment="Left"/>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
