@@ -4,6 +4,9 @@ WPF Library for styling your application like League of Legends Client
 
 [![Created under Riot Legal Jibber Jabber](https://img.shields.io/badge/created_under-Riot_Legal_Jibber_Jabber-red?logo=riot-games)](https://www.riotgames.com/en/legal)
 [![GitHub License](https://img.shields.io/github/license/craftersmine/Ui.League)](https://github.com/craftersmine/Ui.League/tree/master/LICENSE)
+[![Nuget](https://img.shields.io/nuget/v/craftersmine.Ui.League?logo=nuget)](https://www.nuget.org/packages/craftersmine.Ui.League) 
+[![Nuget](https://img.shields.io/nuget/dt/craftersmine.Ui.League?label=nuget%20downloads&logo=nuget)](https://www.nuget.org/packages/craftersmine.Ui.League) 
+[![GitHub Releases](https://img.shields.io/github/downloads/craftersmine/Ui.League/total?label=github%20downloads&logo=github)](https://github.com/craftersmine/Ui.League/releases)
 ![Discord](https://img.shields.io/badge/discord-@craftersmine-5865f2?logo=discord&logoColor=white)
 ![GitHub Repo stars](https://img.shields.io/github/stars/craftersmine/Ui.League)
 ![Maintenance](https://img.shields.io/maintenance/yes/2023)
