@@ -41,6 +41,7 @@
 		<None Remove="Fonts\Spiegel\spiegel-regularitalic.otf" />
 		<None Remove="Fonts\Spiegel\spiegel-semibold.otf" />
 		<None Remove="Fonts\Spiegel\spiegel-semibolditalic.otf" />
+		<None Remove="Shaders\AngularGradientEffect.ps" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -60,6 +61,7 @@
 		<Resource Include="Fonts\Spiegel\spiegel-regularitalic.otf" />
 		<Resource Include="Fonts\Spiegel\spiegel-semibold.otf" />
 		<Resource Include="Fonts\Spiegel\spiegel-semibolditalic.otf" />
+		<Resource Include="Shaders\AngularGradientEffect.ps" />
 	</ItemGroup>
 
 	<ItemGroup>
