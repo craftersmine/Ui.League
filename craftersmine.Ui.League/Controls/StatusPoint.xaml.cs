@@ -23,7 +23,7 @@ namespace craftersmine.Ui.League.Controls
         /// <summary>
         /// Identifies <see cref="StatusType"/> dependency property
         /// </summary>
-        public static readonly DependencyProperty StatusTypeProperty = DependencyProperty.Register(nameof(StatusType), typeof(StatusType), typeof(StatusPoint))
+        public static readonly DependencyProperty StatusTypeProperty = DependencyProperty.Register(nameof(StatusType), typeof(StatusType), typeof(StatusPoint));
 
         /// <summary>
         /// Gets or sets type of status to show
