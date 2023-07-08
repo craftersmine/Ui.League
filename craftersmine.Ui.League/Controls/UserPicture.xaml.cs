@@ -21,9 +21,14 @@ namespace craftersmine.Ui.League.Controls
     public partial class UserPicture : Border
     {
         /// <summary>
-        /// Gets or sets image source
+        /// Identifies <see cref="ImageSource"/> dependency property
         /// </summary>
-        public ImageSource? ImageSource { get; set; }
+        public static readonly DependencyProperty ImageSourceProperty = DependencyProperty.Register(nameof(ImageSource), typeof(ImageSource), typeof(UserPictureButton));
+
+        /// <summary>
+        /// Gets or sets user profile picture source
+        /// </summary>
+        public ImageSource? ImageSource { get => (ImageSource)GetValue(ImageSourceProperty); set => SetValue(ImageSourceProperty, value); }
 
         /// <summary>
         /// Instantiates a new instance of <see cref="UserPicture"/>

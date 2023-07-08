@@ -20,18 +20,21 @@ namespace craftersmine.Ui.League.Controls
     /// </summary>
     public partial class StatusPoint : Border
     {
-        private StatusType statusType;
+        /// <summary>
+        /// Identifies <see cref="StatusType"/> dependency property
+        /// </summary>
+        public static readonly DependencyProperty StatusTypeProperty = DependencyProperty.Register(nameof(StatusType), typeof(StatusType), typeof(StatusPoint))
 
         /// <summary>
         /// Gets or sets type of status to show
         /// </summary>
         public StatusType StatusType
         {
-            get => statusType;
+            get => (StatusType)GetValue(StatusTypeProperty);
             set
             {
-                statusType = value;
-                switch (statusType)
+                SetValue(StatusTypeProperty, value);
+                switch ((StatusType) GetValue(StatusTypeProperty))
                 {
                     case StatusType.Online:
                         BorderBrush = (SolidColorBrush)TryFindResource("LeagueStatusBorderOnline");
