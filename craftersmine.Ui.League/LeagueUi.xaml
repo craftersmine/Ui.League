@@ -1254,7 +1254,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ListBoxItem">
                     <Border x:Name="ListBoxItemBorder" Padding="{TemplateBinding Padding}">
-                        <ContentControl x:Name="ListBoxItemContent" Content="{TemplateBinding Content}"/>
+                        <ContentControl x:Name="ListBoxItemContent" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -1283,7 +1283,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBox}">
                     <ScrollViewer>
-                        <StackPanel IsItemsHost="True"/>
+                        <ItemsPresenter/>
                     </ScrollViewer>
                 </ControlTemplate>
             </Setter.Value>
@@ -1302,7 +1302,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ListViewItem">
                     <Border x:Name="ListViewItemBorder" Padding="{TemplateBinding Padding}">
-                        <ContentControl x:Name="ListViewItemContent" Content="{TemplateBinding Content}"/>
+                        <ContentControl x:Name="ListViewItemContent" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
