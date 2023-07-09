@@ -23,7 +23,7 @@ namespace craftersmine.Ui.League.Controls
         /// <summary>
         /// Identifies <see cref="ImageSource"/> dependency property
         /// </summary>
-        public static readonly DependencyProperty ImageSourceProperty = DependencyProperty.Register(nameof(ImageSource), typeof(ImageSource), typeof(UserPictureButton));
+        public static readonly DependencyProperty ImageSourceProperty = DependencyProperty.Register(nameof(ImageSource), typeof(ImageSource), typeof(UserPicture));
 
         /// <summary>
         /// Gets or sets user profile picture source

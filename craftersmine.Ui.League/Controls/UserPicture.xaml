@@ -27,6 +27,6 @@
         </ResourceDictionary>
     </Border.Resources>
     <Border BorderBrush="{StaticResource LeagueUserPictureImageVignette}" CornerRadius="16" BorderThickness="1">
-        <Image x:Name="Image" OpacityMask="{StaticResource LeagueUserPictureImageOpacityMask}" Source="{Binding RelativeSource={RelativeSource AncestorType=local:UserPicture}, Path=ImageSource}"/>
+        <Image x:Name="Image" OpacityMask="{StaticResource LeagueUserPictureImageOpacityMask}" Source="{Binding RelativeSource={RelativeSource AncestorType=local:UserPicture}, Path=ImageSource, Mode=TwoWay}"/>
     </Border>
 </Border>
