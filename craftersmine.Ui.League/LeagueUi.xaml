@@ -10,7 +10,23 @@
     <FontFamily x:Key="SpiegelRegular">/craftersmine.Ui.League;component/Fonts/Spiegel/#Spiegel Regular</FontFamily>
     <FontFamily x:Key="SpiegelSemiBold">/craftersmine.Ui.League;component/Fonts/Spiegel/#Spiegel SemiBold</FontFamily>
 
-    <SolidColorBrush x:Key="LeagueWindowBackground" Color="#010a13"/>
+    <!--#region Window Brushes-->
+
+    <Color x:Key="LeagueWindowBackgroundColor">#010a13</Color>
+    <Color x:Key="LeagueWindowBackgroundTransparentColor">#00010a13</Color>
+
+    <SolidColorBrush x:Key="LeagueWindowBackground" Color="{StaticResource LeagueWindowBackgroundColor}"/>
+    <SolidColorBrush x:Key="LeagueWindowHeaderTopBorder" Color="#785a28"/>
+    <SolidColorBrush x:Key="LeagueWindowHeaderBottomBorder" Color="#3e4142"/>
+    <SolidColorBrush x:Key="LeagueWindowBorder" Color="#1e282d"/>
+    <LinearGradientBrush x:Key="LeagueWindowHeaderBackgroundGradient" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="{StaticResource LeagueWindowBackgroundColor}" Offset="0.6"/>
+            <GradientStop Color="{StaticResource LeagueWindowBackgroundTransparentColor}" Offset="1.1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <!--#endregion-->
 
     <LinearGradientBrush x:Key="LeagueUserPictureImageBorderDefault" StartPoint="0,0" EndPoint="0,1">
         <LinearGradientBrush.GradientStops>
