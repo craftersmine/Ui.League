@@ -11,13 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using craftersmine.Ui.League.Controls;
 
 namespace craftersmine.Ui.League
 {
     /// <summary>
     /// Логика взаимодействия для TestWindow.xaml
     /// </summary>
-    public partial class TestWindow : Window
+    public partial class TestWindow : LeagueWindow
     {
         public TestWindow()
         {
