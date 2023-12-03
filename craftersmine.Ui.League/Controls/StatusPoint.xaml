@@ -6,6 +6,6 @@
         xmlns:local="clr-namespace:craftersmine.Ui.League.Controls"
         mc:Ignorable="d" 
         d:DesignHeight="12" d:DesignWidth="12" MaxHeight="12" MaxWidth="12" MinHeight="12" MinWidth="12"
-        BorderThickness="3" BorderBrush="{StaticResource LeagueStatusBorderOnline}" CornerRadius="6"
-        Background="{StaticResource LeagueStatusBackgroundOnline}">
+        BorderThickness="3" BorderBrush="{StaticResource LeagueStatusBorderOffline}" CornerRadius="6"
+        Background="{StaticResource LeagueStatusBackgroundOffline}">
 </Border>
