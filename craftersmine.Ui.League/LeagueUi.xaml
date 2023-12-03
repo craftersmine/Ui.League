@@ -457,10 +457,15 @@
                                     <ContentPresenter Grid.Column="0" ContentTemplate="{TemplateBinding ContentTemplate}"
                                                       Content="{TemplateBinding Header}"/>
                                     <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 0 1 0">
-                                        <!-- TODO: Draw help icon -->
-                                        <!-- TODO: Add buttons events for help and settings -->
-                                        <Button Content="?" Style="{StaticResource LeagueMainWindowHeaderButton}"/>
-                                        <Button Style="{StaticResource LeagueMainWindowHeaderButton}">
+                                        <Button Style="{StaticResource LeagueMainWindowHeaderButton}" Click="HelpButtonClick" x:Name="LeagueWindowHelpButton">
+                                            <Button.Content>
+                                                <Grid Width="20" Height="20" Background="{StaticResource LeagueWindowBackground}">
+                                                    <Path Width="16" Height="16" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}" StrokeThickness="2"
+                                                          Data="M 5 6.5 C 5.8 4.9 6.8 4 8 4 M 8 4 C 10.1 4.1 11 5.2 11 6.25 M 11 6.25 C 11 8 9.6 7.9 8.8 8.5 M 8.8 8.5 C 8 9.3 8 9.3 10 8 M 8 12 L 8.5 13.5"/>
+                                                </Grid>
+                                            </Button.Content>
+                                        </Button>
+                                        <Button Style="{StaticResource LeagueMainWindowHeaderButton}" Click="SettingsButtonClick" x:Name="LeagueWindowSettingsButton">
                                             <Button.Content>
                                                 <Grid Width="20" Height="20" Background="{StaticResource LeagueWindowBackground}">
                                                     <Path Width="16" Height="16" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}" StrokeThickness="2">
@@ -481,21 +486,21 @@
                                                 </Grid>
                                             </Button.Content>
                                         </Button>
-                                        <Button Style="{StaticResource LeagueMainWindowHeaderButton}" Click="MinButtonClick">
+                                        <Button Style="{StaticResource LeagueMainWindowHeaderButton}" Click="MinButtonClick" x:Name="LeagueWindowMinimizeButton">
                                             <Button.Content>
                                                 <Grid Width="20" Height="20" Background="{StaticResource LeagueWindowBackground}">
                                                     <Path Width="16" Height="16" Data="M 3 11.5 12 11.5" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}" StrokeThickness="2.5"/>
                                                 </Grid>
                                             </Button.Content>
                                         </Button>
-                                        <Button Style="{StaticResource LeagueMainWindowHeaderButton}" Click="MaxButtonClick">
+                                        <Button Style="{StaticResource LeagueMainWindowHeaderButton}" Click="MaxButtonClick" x:Name="LeagueWindowMaximizeButton">
                                             <Button.Content>
                                                 <Grid Width="20" Height="20" Background="{StaticResource LeagueWindowBackground}">
                                                     <Path Width="16" Height="16" Data="M 2 4 12 4 12 12 3 12 3 3" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}" StrokeThickness="2.5"/>
                                                 </Grid>
                                             </Button.Content>
                                         </Button>
-                                        <Button Style="{StaticResource LeagueMainWindowHeaderButton}" Click="CloseButtonClick">
+                                        <Button Style="{StaticResource LeagueMainWindowHeaderButton}" Click="CloseButtonClick" x:Name="LeagueWindowCloseButton">
                                             <Button.Content>
                                                 <Grid Width="20" Height="20" Background="{StaticResource LeagueWindowBackground}">
                                                     <Path Width="16" Height="16" Data="M 3.5 3.5 L 11.5 11.5 M 11.5 3.5 L 3.5 11.5" Stroke="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}" StrokeThickness="2.5"/>
@@ -510,6 +515,27 @@
                             </Grid>
                         </Grid>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ResizeMode" Value="CanMinimize">
+                            <Setter TargetName="LeagueWindowMaximizeButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="ResizeMode" Value="NoResize">
+                            <Setter TargetName="LeagueWindowMaximizeButton" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="LeagueWindowMinimizeButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsHelpButtonVisible" Value="False">
+                            <Setter TargetName="LeagueWindowHelpButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsSettingsButtonVisible" Value="False">
+                            <Setter TargetName="LeagueWindowSettingsButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsHelpButtonVisible" Value="True">
+                            <Setter TargetName="LeagueWindowHelpButton" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsSettingsButtonVisible" Value="True">
+                            <Setter TargetName="LeagueWindowSettingsButton" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
