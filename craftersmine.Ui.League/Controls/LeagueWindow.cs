@@ -22,6 +22,19 @@ namespace craftersmine.Ui.League.Controls
             DependencyProperty.Register(
                 nameof(Header), typeof(object), 
                 typeof(ContentControl), new FrameworkPropertyMetadata((object)null));
+        
+        public static readonly DependencyProperty IsSettingsButtonVisibleProperty =
+            DependencyProperty.Register(
+                nameof(IsSettingsButtonVisible), typeof(bool), 
+                typeof(ContentControl), new FrameworkPropertyMetadata((object)false));
+
+        public static readonly DependencyProperty IsHelpButtonVisibleProperty =
+            DependencyProperty.Register(
+                nameof(IsHelpButtonVisible), typeof(bool), 
+                typeof(ContentControl), new FrameworkPropertyMetadata((object)false));
+
+        public event RoutedEventHandler HelpRequested;
+        public event RoutedEventHandler SettingsRequested;
 
         [Bindable(true)]
         public object Header
@@ -35,6 +48,30 @@ namespace craftersmine.Ui.League.Controls
         {
             get { return (DataTemplate) GetValue(ContentTemplateProperty); }
             set { SetValue(ContentTemplateProperty, value); }
+        }
+
+        [Bindable(true)]
+        public bool IsSettingsButtonVisible
+        {
+            get { return (bool) GetValue(IsSettingsButtonVisibleProperty); }
+            set { SetValue(IsSettingsButtonVisibleProperty, value); }
+        }
+
+        [Bindable(true)]
+        public bool IsHelpButtonVisible
+        {
+            get { return (bool) GetValue(IsHelpButtonVisibleProperty); }
+            set { SetValue(IsHelpButtonVisibleProperty, value); }
+        }
+
+        internal void RaiseHelpRequested(object sender, RoutedEventArgs e)
+        {
+            HelpRequested?.Invoke(this, e);
+        }
+
+        internal void RaiseSettingsRequested(object sender, RoutedEventArgs e)
+        {
+            SettingsRequested?.Invoke(this, e);
         }
     }
 }

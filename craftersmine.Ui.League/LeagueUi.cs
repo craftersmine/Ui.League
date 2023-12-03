@@ -42,5 +42,15 @@ namespace craftersmine.Ui.League
                 else SystemCommands.MaximizeWindow(w);
             });
         }
+
+        private void HelpButtonClick(object sender, RoutedEventArgs e)
+        {
+            sender.ForWindowFromTemplate(w => ((LeagueWindow)w).RaiseHelpRequested(sender, e));
+        }
+
+        private void SettingsButtonClick(object sender, RoutedEventArgs e)
+        {
+            sender.ForWindowFromTemplate(w => ((LeagueWindow)w).RaiseSettingsRequested(sender, e));
+        }
     }
 }

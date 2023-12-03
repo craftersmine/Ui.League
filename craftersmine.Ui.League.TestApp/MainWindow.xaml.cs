@@ -24,5 +24,15 @@ namespace craftersmine.Ui.League
         {
             InitializeComponent();
         }
+
+        private void OnSettingsRequested(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Settings button clicked!", "Event raised!", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        
+        private void OnHelpRequested(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Help button clicked!", "Event raised!", MessageBoxButton.OK, MessageBoxImage.Question);
+        }
     }
 }
