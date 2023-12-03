@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<RootNamespace>craftersmine.Ui.League</RootNamespace>
-		<Version>1.1.4</Version>
+		<Version>1.2.0</Version>
 		<Authors>craftersmine</Authors>
 		<Description>WPF library with styles from League of Legends Client</Description>
 		<Copyright>Copyright © craftersmine 2023</Copyright>

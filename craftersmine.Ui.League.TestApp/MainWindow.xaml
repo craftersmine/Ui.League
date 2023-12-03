@@ -1,4 +1,4 @@
-﻿<Window
+﻿<controls:LeagueWindow
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +7,11 @@
         xmlns:controls="clr-namespace:craftersmine.Ui.League.Controls;assembly=craftersmine.Ui.League"
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="craftersmine.Ui.League.TestWindow"
         mc:Ignorable="d"
-        Title="TestWindow" Height="450" Width="800" Style="{StaticResource LeagueWindowStyle}">
+        Title="TestWindow" Height="450" Width="800" Style="{StaticResource LeagueMainWindowStyle}" ResizeMode="CanResizeWithGrip" IsSettingsButtonVisible="True" IsHelpButtonVisible="True"
+        SettingsRequested="OnSettingsRequested" HelpRequested="OnHelpRequested">
+    <controls:LeagueWindow.Header>
+        <TextBlock Text="League UI Controls Test Window" Style="{StaticResource LeagueHeaderText}" VerticalAlignment="Center" Margin="16 0 0 0"/>
+    </controls:LeagueWindow.Header>
     <ScrollViewer>
         <WrapPanel>
             <GroupBox Header="Buttons" Margin="10" Width="240">
@@ -291,4 +295,4 @@
             </GroupBox>
         </WrapPanel>
     </ScrollViewer>
-</Window>
+</controls:LeagueWindow>
