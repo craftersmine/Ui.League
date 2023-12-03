@@ -420,6 +420,9 @@
         <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
         <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
 
+        <Setter Property="MinWidth" Value="420"/>
+        <Setter Property="MinHeight" Value="300"/>
+
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome NonClientFrameEdges="None"
