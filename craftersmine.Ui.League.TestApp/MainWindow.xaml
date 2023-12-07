@@ -309,6 +309,13 @@
                     <controls:HeaderTab IsChecked="True">Header Tab Checked</controls:HeaderTab>
                 </WrapPanel>
             </GroupBox>
+            <GroupBox Header="ToggleSwitch">
+                <StackPanel>
+                    <controls:ToggleSwitch/>
+                    <controls:ToggleSwitch IsChecked="True"/>
+                    <controls:ToggleSwitch IsEnabled="False"/>
+                </StackPanel>
+            </GroupBox>
         </WrapPanel>
     </ScrollViewer>
 </controls:LeagueWindow>
