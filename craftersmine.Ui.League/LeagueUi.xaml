@@ -101,6 +101,10 @@
     <SolidColorBrush x:Key="LeagueTextColorSubHeader" Color="#dfd6c3"/>
     <SolidColorBrush x:Key="LeagueTextColorLargeBrightDefault" Color="#e4dbc8"/>
     <SolidColorBrush x:Key="LeagueTextColorBright" Color="#f0e6d2"/>
+    <SolidColorBrush x:Key="LeagueTextColorHeaderTabDefault" Color="#cdbe91"/>
+    <SolidColorBrush x:Key="LeagueTextColorHeaderTabMouseOver" Color="#eee4d0"/>
+    <SolidColorBrush x:Key="LeagueTextColorHeaderTabPressed" Color="#c89d40"/>
+    <SolidColorBrush x:Key="LeagueTextColorHeaderTabChecked" Color="#eee4d0"/>
     <!--#endregion-->
 
     <!--#region CheckBox Brushes-->
@@ -380,13 +384,24 @@
     </LinearGradientBrush>
     <!--#endregion-->
 
-    <!--<Style TargetType="Window" x:Key="LeagueWindowStyle">
-        <Style.Setters>
-            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
-            <Setter Property="Background" Value="{StaticResource LeagueWindowBackground}"/>
-            <Setter Property="FontFamily" Value="{StaticResource SpiegelRegular}"/>
-        </Style.Setters>
-    </Style>-->
+    <!--#region HeaderTab Brushes-->
+    <LinearGradientBrush x:Key="LeagueHeaderTabBackgroundChecked" StartPoint="0 0" EndPoint="0 1">
+        <GradientStop Color="Transparent" Offset="0"/>
+        <GradientStop Color="#55aba796" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueHeaderTabBackgroundMouseOver" StartPoint="0 0" EndPoint="0 1">
+        <GradientStop Color="Transparent" Offset="0"/>
+        <GradientStop Color="#77aba796" Offset="1"/>
+    </LinearGradientBrush>
+    <RadialGradientBrush x:Key="LeagueHeaderTabBackgroundLight" Center=".5 1" GradientOrigin=".5 1" RadiusX=".45" RadiusY=".35">
+        <GradientStop Color="#aab1ad9d" Offset="0"/>
+        <GradientStop Color="Transparent" Offset="1"/>
+    </RadialGradientBrush>
+    <LinearGradientBrush x:Key="LeagueHeaderTabArrowGradient" StartPoint="0 0" EndPoint="0 1">
+        <GradientStop Color="#785a28" Offset="0"/>
+        <GradientStop Color="#b68d38" Offset="1"/>
+    </LinearGradientBrush>
+    <!--#endregion-->
 
     <Style TargetType="Button" x:Key="LeagueMainWindowHeaderButton">
         <Setter Property="Height" Value="26"/>
@@ -1593,6 +1608,55 @@
                             <Border x:Name="PART_Indicator" Background="{StaticResource LeagueProgressBarYellowForegroundDefault}" HorizontalAlignment="Left"/>
                         </Border>
                     </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LeagueHeaderTab" TargetType="controls:HeaderTab">
+        <Setter Property="MinWidth" Value="54"/>
+        <Setter Property="MinHeight" Value="80"/>
+        <Setter Property="MaxHeight" Value="80"/>
+        <Setter Property="Height" Value="80"/>
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorHeaderTabDefault}"/>
+        <Setter Property="FontFamily" Value="{StaticResource BeaufortForLOL}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid x:Name="TabBackground" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
+                        <Grid x:Name="TopArrow" Width="29" Height="15" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden" Margin="0 -1 0 0">
+                            <Path Stroke="{StaticResource LeagueHeaderTabArrowGradient}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Data="M 0 0 L 14 14 L 15 14 L 28 0" StrokeThickness="2"/>
+                            <Path Stroke="{StaticResource LeagueHeaderTabArrowGradient}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Data="M 0 0 L 9 0 L 14 5 L 15 5 L 20 0 L 28 0" StrokeThickness="1"/>
+                        </Grid>
+                        <Grid x:Name="TabBackgroundLight" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" Margin="8"/>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Background" TargetName="TabBackground" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorHeaderTabMouseOver}"/>
+                            <Setter Property="Background" TargetName="TabBackgroundLight" Value="{StaticResource LeagueHeaderTabBackgroundLight}"/>
+                            <Setter Property="Background" TargetName="TabBackground" Value="{StaticResource LeagueHeaderTabBackgroundMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" TargetName="TopArrow" Value="Visible"></Setter>
+                            <Setter Property="Background" TargetName="TabBackground" Value="{StaticResource LeagueHeaderTabBackgroundChecked}"/>
+                            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorHeaderTabChecked}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorHeaderTabPressed}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
