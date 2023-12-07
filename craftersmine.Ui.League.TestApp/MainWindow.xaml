@@ -311,9 +311,9 @@
             </GroupBox>
             <GroupBox Header="ToggleSwitch">
                 <StackPanel>
-                    <controls:ToggleSwitch/>
-                    <controls:ToggleSwitch IsChecked="True"/>
-                    <controls:ToggleSwitch IsEnabled="False"/>
+                    <controls:ToggleSwitch Content="ToggleSwitch Default"/>
+                    <controls:ToggleSwitch Content="ToggleSwitch Checked" IsChecked="True"/>
+                    <controls:ToggleSwitch Content="ToggleSwitch Disabled" IsEnabled="False"/>
                 </StackPanel>
             </GroupBox>
         </WrapPanel>
