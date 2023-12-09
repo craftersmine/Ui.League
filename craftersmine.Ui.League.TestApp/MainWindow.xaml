@@ -309,11 +309,24 @@
                     <controls:HeaderTab IsChecked="True">Header Tab Checked</controls:HeaderTab>
                 </WrapPanel>
             </GroupBox>
-            <GroupBox Header="ToggleSwitch">
+            <GroupBox Header="ToggleSwitch" Margin="10" Width="240">
                 <StackPanel>
-                    <controls:ToggleSwitch Content="ToggleSwitch Default"/>
-                    <controls:ToggleSwitch Content="ToggleSwitch Checked" IsChecked="True"/>
-                    <controls:ToggleSwitch Content="ToggleSwitch Disabled" IsEnabled="False"/>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:ToggleSwitch/>
+                        <TextBlock Text="ToggleSwitch Default" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:ToggleSwitch IsChecked="True"/>
+                        <TextBlock Text="ToggleSwitch Checked" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:ToggleSwitch IsEnabled="False"/>
+                        <TextBlock Text="ToggleSwitch Disabled" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:ToggleSwitch IsChecked="True" IsEnabled="False"/>
+                        <TextBlock Text="ToggleSwitch Disabled Checked" VerticalAlignment="Center"/>
+                    </StackPanel>
                 </StackPanel>
             </GroupBox>
         </WrapPanel>
