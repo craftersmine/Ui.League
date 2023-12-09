@@ -10,7 +10,16 @@
         Title="TestWindow" Height="450" Width="800" Style="{StaticResource LeagueMainWindowStyle}" ResizeMode="CanResizeWithGrip" IsSettingsButtonVisible="True" IsHelpButtonVisible="True"
         SettingsRequested="OnSettingsRequested" HelpRequested="OnHelpRequested">
     <controls:LeagueWindow.Header>
-        <TextBlock Text="League UI Controls Test Window" Style="{StaticResource LeagueHeaderText}" VerticalAlignment="Center" Margin="16 0 0 0"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="League UI Controls Test Window" Style="{StaticResource LeagueHeaderText}" VerticalAlignment="Center" Margin="16 0 0 0"/>
+            
+            <StackPanel Orientation="Horizontal" Margin="16 0 0 0">
+                <controls:HeaderTab>Header Tab</controls:HeaderTab>
+                <controls:HeaderTabSeparator/>
+                <controls:HeaderTab IsEnabled="False">Header Tab Disabled</controls:HeaderTab>
+                <controls:HeaderTab IsChecked="True">Header Tab Checked</controls:HeaderTab>
+            </StackPanel>
+        </StackPanel>
     </controls:LeagueWindow.Header>
     <ScrollViewer>
         <WrapPanel>
@@ -291,6 +300,33 @@
             <GroupBox Header="Spinner" Margin="10" Width="240">
                 <StackPanel>
                 <controls:Spinner x:Name="spinner" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="HeaderTabs" Margin="10" Width="240">
+                <WrapPanel Orientation="Horizontal">
+                    <controls:HeaderTab>Header Tab</controls:HeaderTab>
+                    <controls:HeaderTab IsEnabled="False">Header Tab Disabled</controls:HeaderTab>
+                    <controls:HeaderTab IsChecked="True">Header Tab Checked</controls:HeaderTab>
+                </WrapPanel>
+            </GroupBox>
+            <GroupBox Header="ToggleSwitch" Margin="10" Width="240">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:ToggleSwitch/>
+                        <TextBlock Text="ToggleSwitch Default" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:ToggleSwitch IsChecked="True"/>
+                        <TextBlock Text="ToggleSwitch Checked" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:ToggleSwitch IsEnabled="False"/>
+                        <TextBlock Text="ToggleSwitch Disabled" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <controls:ToggleSwitch IsChecked="True" IsEnabled="False"/>
+                        <TextBlock Text="ToggleSwitch Disabled Checked" VerticalAlignment="Center"/>
+                    </StackPanel>
                 </StackPanel>
             </GroupBox>
         </WrapPanel>
