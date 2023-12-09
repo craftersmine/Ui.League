@@ -403,26 +403,6 @@
     </LinearGradientBrush>
     <!--#endregion-->
 
-    <!-- #region CircleButton Brushes -->
-    <LinearGradientBrush x:Key="LeagueCircleButtonBorderDefault" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#be9f5e" Offset="0"/>
-        <GradientStop Color="#694f27" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="LeagueCircleButtonBorderMouseOver" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#eee3ce" Offset="0"/>
-        <GradientStop Color="#c79b3e" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="LeagueCircleButtonBorderPressed" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#785a28" Offset="0"/>
-        <GradientStop Color="#765927" Offset="1"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="LeagueCircleButtonBorderDisabled" Color="#5c5b57"/>
-    <SolidColorBrush x:Key="LeagueCircleButtonBackgroundDefault" Color="#1e2328"/>
-    <SolidColorBrush x:Key="LeagueCircleButtonBackgroundMouseOver" Color="#1e282d"/>
-    <SolidColorBrush x:Key="LeagueCircleButtonBackgroundPressed" Color="#1e2328"/>
-    <SolidColorBrush x:Key="LeagueCircleButtonBackgroundDisabled" Color="#1e2328"/>
-    <!-- #endregion -->
-
     <!-- #region ToggleSwitch Brushes -->
     <LinearGradientBrush x:Key="LeagueToggleSwitchBackgroundChecked" StartPoint="1 0" EndPoint="0 0">
         <GradientStop Color="#389b44" Offset="0"/>
@@ -432,6 +412,24 @@
         <GradientStop Color="#203c44" Offset="0"/>
         <GradientStop Color="#212d34" Offset="1"/>
     </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LeagueToggleSwitchBorderDefault" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#be9f5e" Offset="0"/>
+        <GradientStop Color="#694f27" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueToggleSwitchBorderMouseOver" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#eee3ce" Offset="0"/>
+        <GradientStop Color="#c79b3e" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="LeagueToggleSwitchBorderPressed" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#785a28" Offset="0"/>
+        <GradientStop Color="#765927" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="LeagueToggleSwitchBorderDisabled" Color="#5c5b57"/>
+    <SolidColorBrush x:Key="LeagueToggleSwitchBackgroundDefault" Color="#1e2328"/>
+    <SolidColorBrush x:Key="LeagueToggleSwitchBackgroundMouseOver" Color="#1e282d"/>
+    <SolidColorBrush x:Key="LeagueToggleSwitchBackgroundPressed" Color="#1e2328"/>
+    <SolidColorBrush x:Key="LeagueToggleSwitchBackgroundDisabled" Color="#1e2328"/>
     <!-- #endregion -->
 
     <Style TargetType="Button" x:Key="LeagueMainWindowHeaderButton">
@@ -1705,46 +1703,35 @@
                 <ControlTemplate TargetType="controls:ToggleSwitch">
                     <Grid>
                         <Border x:Name="ToggleSwitchSlider" CornerRadius="8" Height="19" Width="41" VerticalAlignment="Center"
-                                SnapsToDevicePixels="True" BorderBrush="{StaticResource LeagueCircleButtonBorderDefault}" BorderThickness="2">
+                                SnapsToDevicePixels="True" BorderBrush="{StaticResource LeagueToggleSwitchBorderDefault}" BorderThickness="2">
                             <Border CornerRadius="8" BorderThickness="1" BorderBrush="#55040d15">
-                                <Path/>
+                                <Path Width="11" Height="9" Stroke="#55000000" StrokeThickness="1" Data="M 1 5 L 3 7 L 9 1" HorizontalAlignment="Left" Margin="5 0 0 0"/>
                             </Border>
                         </Border>
-                        <ToggleButton IsChecked="{TemplateBinding IsChecked}"  x:Name="ToggleSwitchHandle" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" SnapsToDevicePixels="True">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDefault}"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border x:Name="ButtonBorder" Width="24" Height="24" BorderThickness="2" Background="{StaticResource LeagueCircleButtonBackgroundDefault}" BorderBrush="{StaticResource LeagueCircleButtonBorderDefault}" CornerRadius="16">
-                                                    <ContentControl x:Name="ButtonContent" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                </Border>
-                                                <ControlTemplate.Triggers>
-                                                    <Trigger Property="IsMouseOver" Value="True">
-                                                        <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueCircleButtonBorderMouseOver}"/>
-                                                        <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource LeagueButtonBackgroundMouseOver}"/>
-                                                        <Setter TargetName="ButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorMouseOver}"/>
-                                                    </Trigger>
-                                                    <Trigger Property="IsPressed" Value="True">
-                                                        <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueCircleButtonBorderPressed}"/>
-                                                        <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource LeagueCircleButtonBackgroundPressed}"/>
-                                                        <Setter TargetName="ButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorPressed}"/>
-                                                    </Trigger>
-                                                    <Trigger Property="IsEnabled" Value="False">
-                                                        <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueCircleButtonBorderDisabled}"/>
-                                                        <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource LeagueCircleButtonBackgroundDisabled}"/>
-                                                        <Setter TargetName="ButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorDisabled}"/>
-                                                    </Trigger>
-                                                </ControlTemplate.Triggers>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Button.Style>
-                        </ToggleButton>
+                        <Border x:Name="ToggleSwitchHandle" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left" SnapsToDevicePixels="True">
+                            <Border x:Name="ButtonBorder" Width="24" Height="24" BorderThickness="2" Background="{StaticResource LeagueToggleSwitchBackgroundDefault}" BorderBrush="{StaticResource LeagueToggleSwitchBorderDefault}" CornerRadius="16">
+                                <ContentControl Grid.Column="1" x:Name="ButtonContent" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueToggleSwitchBorderMouseOver}"/>
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource LeagueButtonBackgroundMouseOver}"/>
+                            <Setter TargetName="ButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueToggleSwitchBorderPressed}"/>
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource LeagueToggleSwitchBackgroundPressed}"/>
+                            <Setter TargetName="ButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorPressed}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{StaticResource LeagueToggleSwitchBorderDisabled}"/>
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="{StaticResource LeagueToggleSwitchBackgroundDisabled}"/>
+                            <Setter TargetName="ToggleSwitchSlider" Property="BorderBrush" Value="{StaticResource LeagueToggleSwitchBorderDisabled}"/>
+                            <Setter TargetName="ButtonContent" Property="Foreground" Value="{StaticResource LeagueTextColorDisabled}"/>
+                        </Trigger>
                         <Trigger Property="IsChecked" Value="False">
                             <Setter TargetName="ToggleSwitchHandle" Property="HorizontalAlignment" Value="Left"/>
                             <Setter TargetName="ToggleSwitchSlider" Property="Background" Value="{StaticResource LeagueToggleSwitchBackgroundUnchecked}"></Setter>
