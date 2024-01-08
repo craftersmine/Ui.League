@@ -9,7 +9,7 @@ WPF Library for styling your application like League of Legends Client
 [![GitHub Releases](https://img.shields.io/github/downloads/craftersmine/Ui.League/total?label=github%20downloads&logo=github)](https://github.com/craftersmine/Ui.League/releases)
 ![Discord](https://img.shields.io/badge/discord-@craftersmine-5865f2?logo=discord&logoColor=white)
 ![GitHub Repo stars](https://img.shields.io/github/stars/craftersmine/Ui.League)
-![Maintenance](https://img.shields.io/maintenance/yes/2023)
+![Maintenance](https://img.shields.io/maintenance/yes/2025)
 
 Controls preview:
 ![Controls Preview](https://raw.githubusercontent.com/craftersmine/Ui.League/master/.github/ControlsPreview.png)
