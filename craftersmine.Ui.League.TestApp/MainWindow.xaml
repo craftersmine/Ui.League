@@ -329,6 +329,12 @@
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
+            <GroupBox Header="PasswordBox" Margin="10" Width="240">
+                <StackPanel>
+                    <PasswordBox Password="11111111" Style="{StaticResource LeaguePasswordBox}" Margin="1"/>
+                    <PasswordBox Password="11111111" IsEnabled="False" Style="{StaticResource LeaguePasswordBox}" Margin="1"/>
+                </StackPanel>
+            </GroupBox>
         </WrapPanel>
     </ScrollViewer>
 </controls:LeagueWindow>
