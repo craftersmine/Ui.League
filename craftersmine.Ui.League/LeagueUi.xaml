@@ -1746,4 +1746,35 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="LeaguePasswordBox" TargetType="PasswordBox">
+        <Setter Property="BorderBrush" Value="{StaticResource LeagueTextBoxBorderDefault}"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="{StaticResource LeagueTextBoxBackgroundDefault}"/>
+        <Setter Property="CaretBrush" Value="{StaticResource LeagueTextColorDefault}"/>
+        <Setter Property="Foreground" Value="{StaticResource LeagueTextColorMouseOver}"/>
+        <Setter Property="Cursor" Value="IBeam"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="PasswordBox">
+                    <Border x:Name="TextBoxBorder" BorderBrush="{StaticResource LeagueTextBoxBorderDefault}" BorderThickness="1" SnapsToDevicePixels="True">
+                        <Border x:Name="TextBoxBorderInner" SnapsToDevicePixels="True" Padding="4 8" BorderBrush="{StaticResource LeagueTextBoxBorderInnerDefault}">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                    </Border>
+                    
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="TextBoxBorder" Property="BorderBrush" Value="{StaticResource LeagueTextBoxBorderMouseOver}"/>
+                            <Setter TargetName="TextBoxBorderInner" Property="Background" Value="{StaticResource LeagueTextBoxBackgroundMouseOver}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource LeagueTextColorDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
