@@ -1061,7 +1061,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBoxItem">
                     <Border x:Name="ItemContainerBorder" Padding="8" SnapsToDevicePixels="True" BorderBrush="{StaticResource LeagueComboBoxItemBorder}" BorderThickness="0 1 0 0">
-                        <ContentControl x:Name="ItemContainerHost" Content="{TemplateBinding Content}" Foreground="{StaticResource LeagueComboBoxItemForegroundDefault}"/>
+                        <ContentControl x:Name="ItemContainerHost" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Foreground="{StaticResource LeagueComboBoxItemForegroundDefault}"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
